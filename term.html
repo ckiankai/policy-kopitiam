@@ -1,0 +1,824 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Term Insurance | Policy Kopitiam</title>
+  <meta name="description" content="A calm, neutral explainer on term insurance in Singapore, what it protects, how it differs from whole life and ILPs, and a simple interactive calculator to understand premium mechanics." />
+
+  <!-- fonts stay global so the whole site feels like one thing -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,650;9..144,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <img src="images/favicon.png" alt="" class="brand-mark" aria-hidden="true">
+        <span class="brand-name">Policy Kopitiam</span>
+      </div>
+
+      <nav class="topbar-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+
+        <div class="nav-dropdown">
+          <button class="nav-dropbtn" id="productsBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="productsMenu">
+            Products
+          </button>
+
+          <div class="nav-dropdown-panel" id="productsMenu" role="menu" aria-label="Products menu">
+            <a role="menuitem" href="medishield.html">MediShield Life</a>
+            <a role="menuitem" href="isp.html">ISPs</a>
+            <a role="menuitem" href="term.html">Term</a>
+            <a role="menuitem" href="whole.html">Whole Life</a>
+            <a role="menuitem" href="ilp.html">ILP</a>
+          </div>
+        </div>
+
+        <a href="about.html">About</a>
+        <a href="disclaimer.html">Disclaimer</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- floating controls -->
+  <button class="fab" id="tocBtn" aria-haspopup="dialog" aria-controls="tocOverlay">Contents</button>
+  <a class="backtotop" id="backToTop" href="#start" aria-label="Back to top">↑ Top</a>
+
+  <!-- toc overlay -->
+  <div class="overlay" id="tocOverlay" aria-hidden="true">
+    <div class="overlay-panel" role="dialog" aria-modal="true" aria-label="Table of contents">
+      <div class="overlay-header">
+        <div class="overlay-title">Contents</div>
+        <button class="overlay-close" id="tocCloseBtn" aria-label="Close contents">✕</button>
+      </div>
+
+      <div class="overlay-body">
+        <a class="toc-link" data-target="start" href="#start">1) Term insurance</a>
+        <a class="toc-link" data-target="what-is" href="#what-is">2) What it is (one minute)</a>
+        <a class="toc-link" data-target="triggers" href="#triggers">3) Claim triggers (death, TPD, CI)</a>
+        <a class="toc-link" data-target="why-exists" href="#why-exists">4) Why it exists (beyond hospital bills)</a>
+        <a class="toc-link" data-target="mechanics" href="#mechanics">5) Premium mechanics (why it costs what it costs)</a>
+        <a class="toc-link" data-target="calculator" href="#calculator">6) Interactive premium mechanics</a>
+        <a class="toc-link" data-target="compare" href="#compare">7) Strengths and Weaknesses</a>
+        <a class="toc-link" data-target="before-buy" href="#before-buy">8) Before you buy (questions + checks)</a>
+        <a class="toc-link" data-target="resources" href="#resources">9) External references</a>
+        <a class="toc-link" data-target="mistakes" href="#mistakes">10) Common mistakes</a>
+        <a class="toc-link" data-target="glossary" href="#glossary">11) Glossary</a>
+        <a class="toc-link" data-target="enough" href="#enough">12) What “enough” looks like</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- global decor layer (hidden on hero, appears after you scroll past hero) -->
+  <div class="decor-layer" aria-hidden="true">
+    <div class="kopi-decor decor-eggs"></div>
+    <div class="kopi-decor decor-toast"></div>
+    <div class="kopi-decor decor-milk"></div>
+    <div class="kopi-decor decor-coffee"></div>
+  </div>
+
+  <main class="container">
+    <!-- hero -->
+    <section class="chapter wash wash-cream hero hero-kopitiam hero-split" id="start">
+      <div class="hero-fold">
+        <p class="kicker reveal-soft">pure protection for a time window</p>
+        <h1 class="site-title reveal-soft">Term insurance</h1>
+      </div>
+
+      <div class="hero-below">
+        <p class="lead center reveal-soft">
+          Term insurance is usually about protecting a responsibility window,
+          like dependants, a mortgage, or income that others rely on.
+        </p>
+
+        <div class="boundary reveal-soft">
+          Educational only. Not advice. No endorsements. No insurer affiliations.
+        </div>
+
+        <p class="framing center reveal-soft">
+          A simple idea: term insurance converts a period of high responsibility into a predictable cost.
+        </p>
+
+        <div class="spacer-xl"></div>
+        <p class="small center reveal-soft muted">
+          Tip: use “Contents” (bottom-right) to jump around.
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- what is -->
+    <section class="chapter wash wash-blue" id="what-is">
+      <h2 class="center reveal-soft">What it is, in one minute</h2>
+
+      <p class="reveal-fast">
+        Term insurance provides coverage for a fixed period (the “term”).
+        If a covered event happens during that period, it pays a lump sum.
+        If the term ends and nothing happens, the coverage ends too.
+      </p>
+
+      <div class="card reveal-fast">
+        <h3>Three moving parts</h3>
+        <ul>
+          <li><strong><span class="gloss" data-term="sum-assured">Sum assured</span></strong>, how much is paid if the trigger happens</li>
+          <li><strong><span class="gloss" data-term="policy-term">Policy term</span></strong>, how long you are covered for</li>
+          <li><strong><span class="gloss" data-term="premium">Premium</span></strong>, what you pay to keep coverage active</li>
+        </ul>
+        <p class="muted">
+          The “no payout at the end” part is not a bug, it’s the point,
+          you’re buying protection, not returns.
+        </p>
+      </div>
+
+      <div class="note reveal-fast">
+        <p>
+          Quiet reminder: term insurance is about the people and obligations attached to you,
+          not about paying hospitals (that’s MediShield Life and ISPs!)
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- triggers -->
+    <section class="chapter wash wash-green" id="triggers">
+      <h2 class="center reveal-soft">Claim triggers, what actually makes it pay</h2>
+
+      <p class="reveal-fast">
+        Life insurance doesn’t pay because you’re “unwell”.
+        It pays when a specific, defined event happens.
+        These triggers are the common ones you’ll see across term, whole life, and ILPs.
+      </p>
+
+      <div class="two-col reveal-fast">
+        <div class="card">
+          <h3>Death</h3>
+          <p class="muted">a lump sum paid to beneficiaries</p>
+          <ul>
+            <li>protects dependants and household cashflow</li>
+            <li>can cover liabilities like a mortgage</li>
+            <li>may trigger even if there is no major medical bill</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Total & Permanent Disability (TPD)</h3>
+          <p class="muted">a severe, permanent loss of ability to work (policy-defined)</p>
+          <ul>
+            <li>meant for long-run income loss, not short-term injury</li>
+            <li>definitions matter a lot, always check the product summary</li>
+            <li>pays cash, hospital insurance is a separate layer</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card reveal-fast">
+        <h3>Critical Illness (CI)</h3>
+        <p class="muted">a diagnosis-based trigger (policy-defined list and severity)</p>
+        <ul>
+          <li>pays a lump sum on diagnosis of a covered condition</li>
+          <li>often meant to support time off work and non-medical costs</li>
+          <li>does not replace hospital insurance, it complements it (different job)</li>
+        </ul>
+      </div>
+
+      <div class="boundary reveal-fast">
+        More triggers = more ways the policy can pay out = usually a higher premium
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- why exists -->
+    <section class="chapter wash wash-cream" id="why-exists">
+      <h2 class="center reveal-soft">Why it exists, beyond hospital bills</h2>
+
+      <p class="reveal-fast">
+        MediShield Life and ISPs are mainly triggered by eligible medical expenses.
+        Term insurance is mainly triggered by life events that disrupt earning capacity and dependency.
+      </p>
+
+      <div class="two-col reveal-fast">
+        <div class="card">
+          <h3>Hospital insurance</h3>
+          <p class="muted">“a medical bill exists, who pays it?”</p>
+          <p>
+            This is <a href="medishield.html">MediShield Life</a> and <a href="isp.html">ISPs</a>.
+            It’s about claim limits, deductibles, co-insurance, and hospital setting choices.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Life protection</h3>
+          <p class="muted">“income stops, what happens to the people relying on it?”</p>
+          <p>
+            This is term, whole life, and ILPs.
+            It’s about dependants, liabilities, and preserving a life plan when luck goes bad.
+          </p>
+        </div>
+      </div>
+
+      <div class="note reveal-fast">
+        <p>
+          Simple example:
+          a sudden death may involve little or no hospital bill -
+          hospital insurance does nothing here, life protection is the relevant layer
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- mechanics -->
+    <section class="chapter wash wash-purple" id="mechanics">
+      <h2 class="center reveal-soft">Premium mechanics, why it costs what it costs</h2>
+
+      <p class="reveal-fast">
+        A clean mental model:
+        <strong>premium is the price of risk transfer</strong>.
+        Anything that increases the insurer’s expected payout usually increases premium.
+      </p>
+
+      <div class="two-col reveal-fast">
+        <div class="card">
+          <h3>Things that usually increase premium</h3>
+          <ul>
+            <li><strong>higher <span class="gloss" data-term="sum-assured">sum assured</span></strong>, bigger potential payout</li>
+            <li><strong>older age at entry</strong>, higher probability of the trigger happening</li>
+            <li><strong>longer <span class="gloss" data-term="policy-term">policy term</span></strong>, more years exposed to risk</li>
+            <li><strong>smoker</strong>, higher statistical risk</li>
+            <li><strong>more triggers</strong>, e.g. adding CI/TPD on top of death</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Things that change the feel (not just the price)</h3>
+          <ul>
+            <li>definitions and exclusions, what counts as a valid claim</li>
+            <li>renewability and convertibility, what happens after the term ends</li>
+            <li>how you plan to invest separately (if you choose term)</li>
+            <li>whether your “need” is temporary or lifelong</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="boundary reveal-fast">
+        Higher risk, higher payout potential, or more ways to claim, usually means higher premiums
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- calculator -->
+    <section class="chapter wash wash-blue" id="calculator">
+      <h2 class="center reveal-soft">Interactive premium mechanics</h2>
+
+      <p class="reveal-fast">
+        This is not a real insurer quote.
+        It’s a tiny toy model to show the mechanics,
+        move one lever, the “premium” moves in the expected direction.
+      </p>
+
+      <div class="card reveal-fast" id="toyCalc">
+        <h3>Premium estimator (for intuition)</h3>
+
+        <div class="two-col" style="gap:14px;">
+          <div>
+            <label for="ageEntry"><strong>Age at entry</strong> <span class="muted" id="ageEntryLabel">30</span></label>
+            <input id="ageEntry" type="range" min="18" max="60" value="30" step="1" style="width:100%;">
+
+            <div style="height:10px"></div>
+
+            <label for="termYears"><strong>Coverage term</strong> <span class="muted" id="termYearsLabel">25 years</span></label>
+            <input id="termYears" type="range" min="5" max="40" value="25" step="1" style="width:100%;">
+
+            <div style="height:10px"></div>
+
+            <label for="sumAssured"><strong>Sum assured</strong> <span class="muted" id="sumAssuredLabel">$500,000</span></label>
+            <input id="sumAssured" type="range" min="100" max="2000" value="500" step="50" style="width:100%;">
+          </div>
+
+          <div>
+            <div class="note" style="margin:0;">
+              <h3 style="margin-top:0;">Risk flags</h3>
+
+              <div style="display:grid; gap:10px; margin-top:10px;">
+                <label style="display:flex; gap:10px; align-items:center;">
+                  <input id="isSmoker" type="checkbox">
+                  <span>smoker</span>
+                </label>
+
+                <label style="display:flex; gap:10px; align-items:center;">
+                  <input id="addTPD" type="checkbox" checked>
+                  <span>include tpd trigger</span>
+                </label>
+
+                <label style="display:flex; gap:10px; align-items:center;">
+                  <input id="addCI" type="checkbox">
+                  <span>include ci trigger</span>
+                </label>
+              </div>
+
+              <div class="boundary" style="margin-top:14px;">
+                <div style="display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;">
+                  <div>
+                    <!-- make it darker -->
+  <div class="muted">Estimated monthly premium</div>
+  <div style="font-family: 'Fraunces', serif; font-size:28px; color:#111;">
+    <span id="premiumOut" style="font-weight:900;">$42</span>
+    <span class="muted" style="font-size:16px; font-weight:600;"> / month</span>
+  </div>
+</div>
+
+                  <div>
+                    <div class="muted">Relative index</div>
+                    <div style="font-family: 'Fraunces', serif; font-weight:800; font-size:28px;">
+                      <span id="indexOut">1.00×</span>
+                    </div>
+                  </div>
+                </div>
+
+                <p class="muted" style="margin-top:10px;">
+                  Numbers may not reflect market rates! The point is direction, not the number.
+                </p>
+              </div>
+            </div>
+
+            <div class="card" style="margin-top:14px;">
+              <h3>What to notice</h3>
+              <ul>
+                <li>age increases, premium rises faster</li>
+                <li>sum assured increases, premium increase as well</li>
+                <li>adding CI/TPD adds cost, because there are more ways to claim</li>
+                <li>smoker flag moves the whole level up</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="note reveal-fast">
+        <p class="center">
+          If you want real quotes, go to official aggregators and insurer pages, this block is just to help your intuition regarding the mechanics of life insurance
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- compare -->
+    <!-- <section class="chapter wash wash-green" id="compare">
+      <h2 class="center reveal-soft">Term vs whole life vs ILP</h2>
+
+      <p class="reveal-fast">
+        A neutral way to compare them:
+        they’re different tools solving slightly different jobs.
+        Confusion happens when we expect one tool to do all jobs at once.
+      </p>
+
+      <div class="grid-3 reveal-fast">
+        <div class="card">
+          <h3>Term</h3>
+          <p class="muted">pure protection, fixed window</p>
+          <ul>
+            <li>usually lowest cost per dollar of coverage</li>
+            <li>expires by design, typically no cash value</li>
+            <li>best when your responsibility is clearly time-bounded</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Whole Life</h3>
+          <p class="muted">protection + savings structure</p>
+          <ul>
+            <li>longer commitment, higher premiums</li>
+            <li>often includes guaranteed and non-guaranteed components</li>
+            <li>used by people who prefer bundled discipline</li>
+          </ul>
+          <p class="muted">
+            future page: <a href="whole.html">Whole Life</a>
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>ILP</h3>
+          <p class="muted">protection + market-linked investing</p>
+          <ul>
+            <li>investment risk is borne by you</li>
+            <li>charges and structure matter a lot over time</li>
+            <li>flexibility can help, or hurt, depending on behaviour</li>
+          </ul>
+          <p class="muted">
+            future page: <a href="ilp.html">ILP</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="boundary reveal-fast">
+        Term is a protection tool first, if you want growth, judge growth using investing logic, not insurance logic
+      </div>
+    </section>
+    -->
+    <!-- compare (term positioning, richer) -->
+<section class="chapter wash wash-green" id="compare">
+  <h2 class="center reveal-soft">Strengths and weaknesses</h2>
+
+  <p class="reveal-fast">
+    Term insurance is the simplest version of life protection:
+    you pay a premium for a fixed period, and it pays out if a defined trigger happens during that period.
+    The simplicity is the point, but it also means term has a clear boundary, it only solves protection.
+  </p>
+
+  <div class="two-col reveal-fast">
+    <div class="card">
+      <h3>Strengths</h3>
+      <ul>
+        <li>usually the lowest cost per dollar of protection</li>
+        <li>clean product logic, pay for risk transfer, not savings</li>
+        <li>easy to size to a responsibility window (kids, mortgage, income replacement)</li>
+        <li>easy to adjust over time, because you are not unwinding a long-horizon structure</li>
+      </ul>
+      <p class="muted">
+        Term feels “efficient” when you can name the window.
+        It’s like renting protection for the years you actually need it.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Weaknesses</h3>
+      <ul>
+        <li>coverage expires by design, no payout if nothing happens</li>
+        <li>renewing later can be more expensive</li>
+        <li>if you keep delaying, you may price yourself out</li>
+        <li>it doesn’t force savings or investing discipline</li>
+      </ul>
+      <p class="muted">
+        Term feels “painful” when someone secretly wants it to behave like a savings product.
+        It won’t, and it’s not meant to.
+      </p>
+    </div>
+  </div>
+
+  <div class="grid-3 reveal-fast">
+    <div class="card">
+      <h3>Compared to <a href="whole.html">whole life</a></h3>
+      <ul>
+        <li>cheaper premiums for the same sum assured</li>
+        <li>more flexible, easier to change plans later</li>
+        <li>but expires, whole life is built to persist</li>
+      </ul>
+      <p class="muted">
+        If whole life is “lock it in for life”, term is “cover the window, then reassess”.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Compared to <a href="ilp.html">ILPs</a></h3>
+      <ul>
+        <li>simpler and usually cheaper for pure protection</li>
+        <li>no market-linked account value, no investment volatility</li>
+        <li>but you must invest separately if you want growth</li>
+      </ul>
+      <p class="muted">
+        Term keeps the jobs clean: insurance does insurance.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Quick anchor</h3>
+      <ul>
+        <li>term solves a time window</li>
+        <li>whole life solves permanence</li>
+        <li>ILPs solve growth + flexibility, at the cost of certainty</li>
+      </ul>
+      <p class="muted">
+        the simplest tool that solves the job is often the best starting point
+      </p>
+    </div>
+  </div>
+
+  <div class="note reveal-fast">
+    <p>
+      Practical rule of thumb:
+      if you can invest consistently without needing a product to force you,
+      many people choose term for protection and invest separately.
+      If you want the policy to carry discipline for you, that’s where whole life or ILPs enter the conversation.
+    </p>
+  </div>
+
+  <div class="boundary reveal-fast">
+    Term is protection first, if you want growth, build growth intentionally elsewhere
+  </div>
+</section>
+
+
+    <div class="divider"></div>
+
+    <!-- before buy -->
+    <section class="chapter wash wash-cream" id="before-buy">
+      <h2 class="center reveal-soft">Before you buy</h2>
+
+      <p class="reveal-fast">
+        Term is straightforward, but “straightforward” doesn’t mean “mindless”.
+        The goal is to buy coverage that matches the responsibility window, without turning premiums into stress later.
+      </p>
+
+      <div class="two-col reveal-fast">
+        <div class="card">
+          <h3>Fit questions</h3>
+          <ul>
+            <li>who is financially affected if my income stops</li>
+            <li>what window am i protecting, until kids are independent, until mortgage is paid</li>
+            <li>is this replacing income, covering liabilities, or both</li>
+            <li>what coverage do i already have (employer, CPF, existing policies)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Mechanics questions</h3>
+          <ul>
+            <li>what exactly triggers the payout (death, TPD, CI), and how are they defined</li>
+            <li>what are the key <span class="gloss" data-term="exclusion">exclusions</span></li>
+            <li>is the premium level or renewable, what happens after the term ends</li>
+            <li>can it be converted later, and under what conditions</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="note reveal-fast">
+        <p class="center">
+          Small habit that helps: ask to see the actual definitions in the product summary, not only brochure phrasing
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- resources -->
+    <section class="chapter wash wash-purple" id="resources">
+      <h2 class="center reveal-soft">External referebces</h2>
+
+      <div class="resource-list reveal-fast">
+        <div class="resource">
+          <h3>MoneyOwl, Singapore’s term life insurance comparison table</h3>
+          <p class="muted">
+            A comparison-style write-up that’s useful for seeing how people structure term comparisons.
+          </p>
+          <a class="ext" href="https://www.moneyowl.com.sg/articles/singapores-term-life-insurance-comparison-table/" target="_blank" rel="noopener noreferrer">
+            Open external site ↗
+          </a>
+        </div>
+
+        <div class="resource">
+          <h3>CompareFirst, product comparison portal</h3>
+          <p class="muted">
+            An official-style comparison portal where you can browse and compare product features (interface may feel utilitarian, but that’s kind of the point).
+          </p>
+          <a class="ext" href="https://www.comparefirst.sg/wap/homeEvent.action" target="_blank" rel="noopener noreferrer">
+            Open external site ↗
+          </a>
+        </div>
+
+        <div class="resource">
+          <h3>MoneySmart, term life overview</h3>
+          <p class="muted">
+            A consumer-friendly overview with common framing, useful as a second perspective.
+          </p>
+          <a class="ext" href="https://www.moneysmart.sg/term-life" target="_blank" rel="noopener noreferrer">
+            Open external site ↗
+          </a>
+        </div>
+      </div>
+
+      <div class="note reveal-fast">
+        <p>
+          Quick tip: use official portals to check factual features and definitions,
+          then use write-ups to see how people talk about trade-offs,
+          don’t treat any single page as the whole truth.
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- mistakes -->
+    <section class="chapter wash wash-green" id="mistakes">
+      <h2 class="center reveal-soft">Common mistakes</h2>
+
+      <p class="reveal-fast">
+        Most mistakes here come from mismatching the product to the problem.
+        These are common friction points, not personal failures.
+      </p>
+
+      <div class="grid-2 reveal-fast">
+        <div class="card">
+          <h3>Buying too short a term</h3>
+          <p class="muted">
+            coverage ends while dependants or liabilities still exist
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Buying coverage without naming the target</h3>
+          <p class="muted">
+            if you can’t name who or what you’re protecting, you may be buying anxiety relief, not protection
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Assuming hospital insurance replaces income</h3>
+          <p class="muted">
+            MediShield/ISP pays medical bills, term/whole/ILP pays people, different job
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Delaying until it becomes expensive</h3>
+          <p class="muted">
+            premiums tend to rise with age and health changes, earlier is often cheaper for the same specs
+          </p>
+        </div>
+      </div>
+
+      <div class="boundary reveal-fast">
+        Know what you’re protecting first, then choose the simplest tool that does that job!
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- glossary -->
+    <section class="chapter wash wash-cream" id="glossary">
+      <h2 class="center reveal-soft">Glossary</h2>
+
+      <p class="reveal-fast">
+        Hover on desktop or tap on mobile for underlined terms.
+        Here are the ones that keep showing up when people compare term, whole life, and ILPs.
+      </p>
+
+      <div class="glossary-grid reveal-fast">
+        <div class="glossary-item">
+          <h3>Sum assured</h3>
+          <p>The amount paid out if the claim trigger happens during the coverage period.</p>
+        </div>
+
+        <div class="glossary-item">
+          <h3>Premium</h3>
+          <p>The amount you pay (monthly or yearly) to keep coverage active.</p>
+        </div>
+
+        <div class="glossary-item">
+          <h3>Policy term</h3>
+          <p>How long the coverage lasts (e.g. 20 years or to age 65).</p>
+        </div>
+
+        <div class="glossary-item">
+          <h3>Exclusion</h3>
+          <p>Situations or conditions the policy does not cover, always check the policy definition.</p>
+        </div>
+
+        <div class="glossary-item">
+          <h3>TPD</h3>
+          <p>Total and Permanent Disability, severe and permanent disability as defined by the policy.</p>
+        </div>
+
+        <div class="glossary-item">
+          <h3>CI</h3>
+          <p>Critical Illness, a diagnosis-based trigger for covered conditions and definitions.</p>
+        </div>
+
+        <div class="glossary-item">
+          <h3>Renewable / Convertible</h3>
+          <p>Features that allow extension or conversion later, terms and conditions vary across products.</p>
+        </div>
+
+        <div class="glossary-item">
+          <h3>Rider</h3>
+          <p>An add-on that modifies or extends a base policy, subject to policy terms.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- enough -->
+    <section class="chapter wash wash-blue" id="enough">
+      <h2 class="center reveal-soft">What “enough” looks like</h2>
+
+      <p class="reveal-fast">
+        For term insurance, “enough” is usually not “maximum coverage”.
+        It’s “if something happens during this window, the people relying on me can keep going without a financial spiral”.
+      </p>
+
+      <div class="note reveal-fast">
+        <p class="center">
+          Term insurance is a way to make sure a specific period of responsibility doesn’t become a permanent setback for others.
+        </p>
+      </div>
+
+      <div class="link-row reveal-fast">
+        <a class="button-link" href="isp.html">Back to ISPs</a>
+        <a class="button-link" href="whole.html">Next, Whole Life</a>
+        <a class="button-link" href="ilp.html">Next, ILPs</a>
+      </div>
+
+      <div class="footer reveal-fast">
+        <p class="center muted small">Educational only. Not advice. No endorsements. No insurer affiliations.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- tooltip -->
+  <div class="tooltip" id="tooltip" role="tooltip" aria-hidden="true"></div>
+
+  <!-- js last -->
+  <script src="app.js"></script>
+
+  <!-- page-only script: toy premium mechanics -->
+  <script>
+    (function () {
+      const $ = (id) => document.getElementById(id);
+
+      const age = $("ageEntry");
+      const term = $("termYears");
+      const sum = $("sumAssured");
+      const smoker = $("isSmoker");
+      const addTPD = $("addTPD");
+      const addCI = $("addCI");
+
+      const ageL = $("ageEntryLabel");
+      const termL = $("termYearsLabel");
+      const sumL = $("sumAssuredLabel");
+
+      const premiumOut = $("premiumOut");
+      const indexOut = $("indexOut");
+
+      if (!age || !term || !sum || !smoker || !addTPD || !addCI) return;
+
+      // not real pricing, designed for "directional truth"
+      function compute() {
+        const a = Number(age.value);
+        const t = Number(term.value);
+        const sK = Number(sum.value); // in thousands
+
+        ageL.textContent = a;
+        termL.textContent = t + " years";
+        sumL.textContent = "$" + (sK * 1000).toLocaleString();
+
+        // base premium for a reference case:
+        // age 30, term 25, sum 500k, non-smoker, death+TPD
+        const basePremium = 42; // dollars/month (toy)
+
+        // factors
+        // age factor grows a bit faster as age rises (captures the intuition)
+        const ageFactor = Math.pow(1.045, (a - 30));
+
+        // longer term increases exposure
+        const termFactor = Math.pow(1.012, (t - 25));
+
+        // sum assured roughly scales linearly with amount
+        const sumFactor = (sK / 500);
+
+        // smoker factor
+        const smokerFactor = smoker.checked ? 1.55 : 1.00;
+
+        // trigger factors (more ways to claim)
+        const tpdFactor = addTPD.checked ? 1.00 : 0.82; // removing TPD makes it cheaper
+        const ciFactor = addCI.checked ? 1.35 : 1.00;
+
+        // mild interaction so changes feel realistic (still toy)
+        const interaction = 1 + Math.max(0, (a - 45)) * 0.003;
+
+        const premium = basePremium * ageFactor * termFactor * sumFactor * smokerFactor * tpdFactor * ciFactor * interaction;
+
+        // clamp for sanity, then round
+        const premRounded = Math.max(10, Math.min(999, premium));
+        premiumOut.textContent = "$" + Math.round(premRounded);
+
+        // index vs reference case
+        const reference = basePremium; // reference is base case
+        const idx = premRounded / reference;
+        indexOut.textContent = idx.toFixed(2) + "×";
+      }
+
+      ["input", "change"].forEach(evt => {
+        age.addEventListener(evt, compute);
+        term.addEventListener(evt, compute);
+        sum.addEventListener(evt, compute);
+        smoker.addEventListener(evt, compute);
+        addTPD.addEventListener(evt, compute);
+        addCI.addEventListener(evt, compute);
+      });
+
+      compute();
+    })();
+  </script>
+</body>
+</html>

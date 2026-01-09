@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Policy Kopitiam</title>
+  <meta name="description" content="A calm, neutral, Singapore-focused guide to insurance, written by an actuarial science student." />
+
+  <!-- fonts stay global so the whole site feels like one thing -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,650;9..144,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <img src="images/favicon.png" alt="" class="brand-mark" aria-hidden="true">
+        <span class="brand-name">Policy Kopitiam</span>
+      </div>
+
+      <nav class="topbar-links" aria-label="Site links">
+        <div class="nav-dropdown">
+          <button class="nav-dropbtn" id="productsBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="productsMenu">
+            Products
+          </button>
+
+          <div class="nav-dropdown-panel" id="productsMenu" role="menu" aria-label="Products menu">
+            <a role="menuitem" href="medishield.html">MediShield Life</a>
+            <a role="menuitem" href="isp.html">ISPs</a>
+            <a role="menuitem" href="term.html">Term</a>
+            <a role="menuitem" href="whole.html">Whole Life</a>
+            <a role="menuitem" href="ilp.html">ILP</a>
+          </div>
+        </div>
+
+        <a href="about.html">About</a>
+        <a href="disclaimer.html">Disclaimer</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- floating controls -->
+  <button class="fab" id="tocBtn" aria-haspopup="dialog" aria-controls="tocOverlay">Contents</button>
+  <a class="backtotop" id="backToTop" href="#start" aria-label="Back to top">↑ Top</a>
+
+  <!-- toc overlay -->
+  <div class="overlay" id="tocOverlay" aria-hidden="true">
+    <div class="overlay-panel" role="dialog" aria-modal="true" aria-label="Table of contents">
+      <div class="overlay-header">
+        <div class="overlay-title">Contents</div>
+        <button class="overlay-close" id="tocCloseBtn" aria-label="Close contents">✕</button>
+      </div>
+
+      <div class="overlay-body">
+        <a class="toc-link" data-target="start" href="#start">1) Start here</a>
+        <a class="toc-link" data-target="use" href="#use">2) How to use this site</a>
+        <a class="toc-link" data-target="sg-system" href="#sg-system">3) Singapore healthcare system: MediShield Life → ISP → Riders</a>
+        <a class="toc-link" data-target="paths" href="#paths">4) Pick a path (where to go next)</a>
+        <a class="toc-link" data-target="protection-vs-money" href="#protection-vs-money">5) Protection problems vs money problems</a>
+        <a class="toc-link" data-target="riders" href="#riders">6) Riders (deductible vs co-pay) + mini simulator</a>
+        <a class="toc-link" data-target="before-buy" href="#before-buy">7) Before you buy anything</a>
+        <a class="toc-link" data-target="market" href="#market">8) Seeing what exists in the market</a>
+        <a class="toc-link" data-target="glossary" href="#glossary">9) Glossary</a>
+        <a class="toc-link" data-target="enough" href="#enough">10) How to know when you’ve done enough</a>
+        <a class="toc-link" data-target="about-links" href="#about-links">11) About + Disclaimer</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- global decor layer (hidden on hero, appears after you scroll past hero) -->
+  <div class="decor-layer" aria-hidden="true">
+    <div class="kopi-decor decor-eggs"></div>
+    <div class="kopi-decor decor-toast"></div>
+    <div class="kopi-decor decor-milk"></div>
+    <div class="kopi-decor decor-coffee"></div>
+  </div>
+
+  <main class="container page-body">
+    <!-- start -->
+    <section class="chapter wash wash-cream hero hero-kopitiam hero-split" id="start">
+      <div class="hero-fold">
+        <p class="kicker reveal-soft">by an actuarial science student</p>
+        <h1 class="site-title reveal-soft">Policy Kopitiam</h1>
+      </div>
+
+      <div class="hero-below">
+        <p class="lead center reveal-soft">
+          A calm, neutral explainer on insurance in Singapore,
+          written for people who want to understand the mechanics before buying anything.
+        </p>
+
+        <div class="boundary reveal-soft">
+          Educational only. Not advice. No endorsements. No insurer affiliations.
+        </div>
+
+        <p class="framing center reveal-soft">
+          Insurance is bought because <strong>if</strong> something happens, the consequences are too large to absorb comfortably.
+        </p>
+
+        <div class="spacer-xl"></div>
+        <p class="small center reveal-soft muted">
+          Tip: use “Contents” (bottom-right) to jump around.
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- how to use -->
+    <section class="chapter wash wash-blue" id="use">
+      <h2 class="center reveal-soft">How to use this site</h2>
+
+      <p class="reveal-fast">
+        This site is not meant to be read top to bottom.
+        Start with the layer you’re unsure about, then go deeper only where needed.
+      </p>
+
+      <div class="card reveal-fast">
+        <h3>Start where your question is</h3>
+        <ul>
+          <li><strong>hospital bills</strong> → <a href="medishield.html">MediShield Life</a> → <a href="isp.html">ISPs</a> → riders</li>
+          <li><strong>income, dependants, liabilities</strong> → <a href="term.html">Term</a> / <a href="whole.html">Whole Life</a></li>
+          <li><strong>growth + flexibility (with charges)</strong> → <a href="ilp.html">ILPs</a></li>
+        </ul>
+        <p class="muted">
+          Each page focuses on mechanics and trade-offs, not rankings or recommendations.
+        </p>
+      </div>
+
+      <p class="reveal-fast muted">
+        What this site will not do: rank products, recommend insurers, or “optimise premiums”.
+        It exists to help you understand trade-offs before you decide.
+      </p>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- sg system -->
+    <section class="chapter wash wash-purple" id="sg-system">
+      <h2 class="center reveal-soft">
+        Singapore healthcare system<br>
+        <span class="muted">MediShield Life → ISP → Riders</span>
+      </h2>
+
+      <p class="reveal-fast">
+        In Singapore, it helps to think in layers rather than “one plan”.
+        The layers stack, they are parts of one system, not simply competing products.
+      </p>
+      
+      <a class="stack-item reveal-fast" href="medishield.html" style="text-decoration:none; display:block;">
+        <div class="stack-title">Base layer: MediShield Life</div>
+        <div class="stack-body">
+          National basic health insurance for large hospital bills and certain treatments,
+          designed with limits and cost-sharing.
+        </div>
+      </a>
+
+      <a class="stack-item reveal-fast" href="isp.html" style="text-decoration:none; display:block;">
+        <div class="stack-title">Optional layer: Integrated Shield Plans (ISP)</div>
+        <div class="stack-body">
+          Private insurer coverage that sits on top of MediShield Life,
+          often offering higher coverage for certain ward classes, subject to policy terms.
+        </div>
+      </a>
+
+      <div class="stack-item reveal-fast">
+        <div class="stack-title">Optional add-on: Riders</div>
+        <div class="stack-body">
+          Add-ons that often change how much you pay out of pocket, mainly through deductible and co-pay mechanics,
+          sometimes with caps and conditions.
+        </div>
+      </div>
+
+      <div class="note reveal-fast">
+        <p>
+          Partial subsidies and cost-sharing are normal here.
+          Insurance rarely means “pays everything”, it usually means “reduces disruption”.
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- paths -->
+    <section class="chapter wash wash-green" id="paths">
+      <h2 class="center reveal-soft">Pick a path (where to go next)</h2>
+
+      <p class="reveal-fast">
+        If you only read one thing, read the page that matches the problem you’re actually solving.
+      </p>
+
+      <div class="grid-3 reveal-fast">
+        <div class="card">
+          <h3>Hospital bills</h3>
+          <p class="muted">bills, ward class, limits, cost-sharing</p>
+          <ul>
+            <li><a href="medishield.html">MediShield Life</a> (start here)</li>
+            <li><a href="isp.html">ISPs</a> (optional upgrade layer)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Life protection</h3>
+          <p class="muted">income stops, dependants, liabilities</p>
+          <ul>
+            <li><a href="term.html">Term</a> (time-bounded window)</li>
+            <li><a href="whole.html">Whole Life</a> (permanence + structure)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Growth + insurance</h3>
+          <p class="muted">market-linked, flexible, charge-driven</p>
+          <ul>
+            <li><a href="ilp.html">ILPs</a> (investment-first structure)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="note reveal-fast">
+        <p class="center">
+          Same word “insurance”, different jobs. Most confusion is just job mismatch.
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- protection vs money -->
+    <section class="chapter wash wash-blue" id="protection-vs-money">
+      <h2 class="center reveal-soft">
+        Protection problems<br>
+        <span class="muted">vs</span><br>
+        Money problems
+      </h2>
+
+      <p class="reveal-fast">
+        A clean separation that prevents most misunderstandings:
+        insurance is mainly for low-frequency, high-impact shocks.
+      </p>
+
+      <div class="grid-3 reveal-fast">
+        <div class="card">
+          <h3>Protection problems</h3>
+          <p class="muted">rare, disruptive shocks</p>
+          <p>insurance-shaped problems</p>
+        </div>
+        <div class="card">
+          <h3>Savings problems</h3>
+          <p class="muted">known, expected expenses</p>
+          <p>budgeting and emergency funds</p>
+        </div>
+        <div class="card">
+          <h3>Investment problems</h3>
+          <p class="muted">long-term growth</p>
+          <p>diversified investing and time</p>
+        </div>
+      </div>
+
+      <p class="reveal-fast muted">
+        When these get mixed, people judge insurance like an investment,
+        or expect investing products to behave like pure protection.
+      </p>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- riders -->
+    <section class="chapter wash wash-pink" id="riders">
+      <h2 class="center reveal-soft">Riders, deductible vs co-pay (trade-offs)</h2>
+
+      <p class="reveal-fast">
+        Riders often change <em>how</em> costs are shared between you and the insurer.
+        They do not remove all friction, they reshape it.
+      </p>
+
+      <div class="card reveal-fast">
+        <h3>Two mechanics to know</h3>
+        <ul>
+          <li><strong><span class="gloss" data-term="deductible">Deductible</span></strong>, you pay the first fixed amount before insurance starts paying.</li>
+          <li><strong><span class="gloss" data-term="co-pay">Co-pay</span></strong>, after deductible, you pay a percentage of the remaining eligible bill.</li>
+        </ul>
+        <p class="muted">
+          Simplified for understanding mechanics. Real policies can include caps, limits, and conditions.
+        </p>
+      </div>
+
+      <!-- keep simulator (as requested) -->
+      <div class="sim card reveal-fast">
+        <h3>Mini simulator (mechanics only)</h3>
+        <p class="muted">Move the sliders to see the basic math of deductible plus co-pay on a sample bill.</p>
+
+        <div class="sim-grid">
+          <label class="sim-field">
+            <span>Sample bill (S$)</span>
+            <input id="bill" type="range" min="500" max="50000" step="500" value="10000" />
+            <span class="sim-value" id="billVal"></span>
+          </label>
+
+          <label class="sim-field">
+            <span>Deductible (S$)</span>
+            <input id="deductible" type="range" min="0" max="10000" step="250" value="2000" />
+            <span class="sim-value" id="deductibleVal"></span>
+          </label>
+
+          <label class="sim-field">
+            <span>Co-pay (%)</span>
+            <input id="copay" type="range" min="0" max="30" step="1" value="10" />
+            <span class="sim-value" id="copayVal"></span>
+          </label>
+        </div>
+
+        <div class="sim-results">
+          <div class="result">
+            <div class="result-label">You pay</div>
+            <div class="result-number" id="youPay"></div>
+          </div>
+          <div class="result">
+            <div class="result-label">Insurer pays</div>
+            <div class="result-number" id="insurerPay"></div>
+          </div>
+        </div>
+
+        <div class="note subtle" style="margin-top:12px;">
+          <p>Read this as mechanics, not advice. Eligibility rules, exclusions, and limits still matter.</p>
+        </div>
+      </div>
+
+      <div class="note reveal-fast">
+        <p class="center">
+          If you want the hospital-bill context (claim limits, ward class, how ISPs sit on MediShield), go to <a href="isp.html">ISPs</a>.
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- before you buy -->
+    <section class="chapter wash wash-cream" id="before-buy">
+      <h2 class="center reveal-soft">Before you buy anything</h2>
+
+      <p class="center framing reveal-fast">
+        These are not “trick questions”. They’re questions that help you understand what you are committing to.
+      </p>
+
+      <div class="two-col reveal-fast">
+        <div class="card">
+          <h3>Ask yourself first</h3>
+          <ul>
+            <li>what am i trying to protect, health bills, income, dependants, liabilities</li>
+            <li>if this risk happened this year, what would break financially</li>
+            <li>what coverage do i already have (MediShield, CPF, employer, existing policies)</li>
+            <li>can i afford this premium not just now, but later</li>
+            <li>if my income dropped, would this policy become a burden</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Ask before signing</h3>
+          <ul>
+            <li>what exactly triggers a claim</li>
+            <li>what situations are excluded</li>
+            <li>what do i still pay even after insurance</li>
+            <li>what changes over time (premium, coverage, conditions)</li>
+            <li>can i explain this to someone else in 60 seconds</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="note reveal-fast">
+        <p class="center">
+          If you can’t describe the moving parts clearly, you don’t yet know what you’re buying.
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- market resources -->
+    <section class="chapter wash wash-purple" id="market">
+      <h2 class="center reveal-soft">Seeing what exists in the market</h2>
+
+      <p class="reveal-fast">
+        Once the concepts are clear, it’s natural to ask “what actually exists out there?”
+        These links are for exploration, not recommendations.
+      </p>
+
+      <div class="resource-list reveal-fast">
+        <div class="resource">
+          <h3>CompareFIRST</h3>
+          <p class="muted">Government-supported comparison platform using standardised inputs.</p>
+          <a class="ext" href="https://www.comparefirst.sg/wap/homeEvent.action" target="_blank" rel="noopener noreferrer">Open external site ↗</a>
+        </div>
+
+        <div class="resource">
+          <h3>MoneySmart – Insurance</h3>
+          <p class="muted">Consumer-focused aggregation site, useful to see how insurance is discussed publicly.</p>
+          <a class="ext" href="https://www.moneysmart.sg/insurance" target="_blank" rel="noopener noreferrer">Open external site ↗</a>
+        </div>
+
+        <div class="resource">
+          <h3>MOH Integrated Shield Plan comparison</h3>
+          <p class="muted">Official MOH reference tables, useful for structure and high-level features.</p>
+          <a class="ext" href="https://www.moh.gov.sg/managing-expenses/schemes-and-subsidies/integrated-shield-plans/comparision-of-integrated-shield-plans/" target="_blank" rel="noopener noreferrer">Open external site ↗</a>
+        </div>
+      </div>
+
+      <p class="reveal-fast muted">
+        These sites show what exists and how prices compare.
+        They are most useful after you understand definitions, exclusions, and cost-sharing.
+      </p>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- glossary -->
+    <section class="chapter wash wash-cream" id="glossary">
+      <h2 class="center reveal-soft">Glossary</h2>
+
+      <p class="reveal-fast">
+        You will see some terms underlined throughout the site.
+        Hover on desktop or tap on mobile for a quick definition.
+      </p>
+
+      <div class="glossary-grid reveal-fast">
+        <div class="glossary-item">
+          <h3><span class="gloss" data-term="premium">Premium</span></h3>
+          <p>The amount you pay to keep coverage active (monthly or yearly).</p>
+        </div>
+
+        <div class="glossary-item">
+          <h3><span class="gloss" data-term="deductible">Deductible</span></h3>
+          <p>The first fixed amount you pay before insurance starts paying (simplified).</p>
+        </div>
+
+        <div class="glossary-item">
+          <h3><span class="gloss" data-term="co-pay">Co-pay</span></h3>
+          <p>The percentage you pay after deductible, the insurer pays the rest (simplified).</p>
+        </div>
+
+        <div class="glossary-item">
+          <h3><span class="gloss" data-term="rider">Rider</span></h3>
+          <p>An add-on that changes or extends a base policy, often by adjusting benefits or cost-sharing.</p>
+        </div>
+
+        <div class="glossary-item">
+          <h3><span class="gloss" data-term="exclusion">Exclusion</span></h3>
+          <p>Situations or conditions the policy does not cover.</p>
+        </div>
+
+        <div class="glossary-item">
+          <h3><span class="gloss" data-term="coverage">Coverage</span></h3>
+          <p>What the policy pays for, under what conditions, and up to what limits.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- enough -->
+    <section class="chapter wash wash-blue" id="enough">
+      <h2 class="center reveal-soft">How to know when you’ve done enough</h2>
+
+      <p class="reveal-fast">
+        <p class="center emphasis">
+        Adequacy is not “everything covered”.
+        Adequacy is asking whether a bad year would permanently derail your life plans.
+
+        Insurance is not meant to remove all inconvenience, discomfort, or uncertainty.
+        It exists to prevent one unlikely but severe event from locking you into years of recovery you never planned for.
+
+        If a single event would rewrite your trajectory entirely, that is usually where insurance has a role.
+      </p>
+      </p>
+
+      <div class="note reveal-fast">
+        <p class="center">
+          <strong>Clarity beats optimisation</strong>
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- about links -->
+    <section class="chapter wash wash-cream" id="about-links">
+      <h2 class="center reveal-soft">About + Disclaimer</h2>
+      <p class="center reveal-fast">Want the “why” behind this site and the boundaries?</p>
+
+      <div class="link-row reveal-fast">
+        <a class="button-link" href="about.html">Read About</a>
+        <a class="button-link" href="disclaimer.html">Read Disclaimer</a>
+      </div>
+
+      <div class="footer reveal-fast">
+        <p class="center muted small">Educational only. Not advice. No endorsements. No insurer affiliations.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- tooltip -->
+  <div class="tooltip" id="tooltip" role="tooltip" aria-hidden="true"></div>
+
+  <!-- js last -->
+  <script src="app.js"></script>
+</body>
+</html>

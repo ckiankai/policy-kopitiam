@@ -1,0 +1,655 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Integrated Shield Plans (ISPs) | Policy Kopitiam</title>
+  <meta name="description" content="A neutral explainer on Integrated Shield Plans in Singapore, what they add on top of MediShield Life, how people usually choose tiers, and the plans listed by ward coverage." />
+
+  <!-- fonts stay global so the whole site feels like one thing -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,650;9..144,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <img src="images/favicon.png" alt="" class="brand-mark" aria-hidden="true">
+        <span class="brand-name">Policy Kopitiam</span>
+      </div>
+
+      <nav class="topbar-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+
+        <div class="nav-dropdown">
+          <button class="nav-dropbtn" id="productsBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="productsMenu">
+            Products
+          </button>
+
+          <div class="nav-dropdown-panel" id="productsMenu" role="menu" aria-label="Products menu">
+            <a role="menuitem" href="medishield.html">MediShield Life</a>
+            <a role="menuitem" href="isp.html">ISPs</a>
+            <a role="menuitem" href="term.html">Term</a>
+            <a role="menuitem" href="whole.html">Whole Life</a>
+            <a role="menuitem" href="ilp.html">ILP</a>
+          </div>
+        </div>
+
+        <a href="about.html">About</a>
+        <a href="disclaimer.html">Disclaimer</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- floating controls -->
+  <button class="fab" id="tocBtn" aria-haspopup="dialog" aria-controls="tocOverlay">Contents</button>
+  <a class="backtotop" id="backToTop" href="#start" aria-label="Back to top">↑ Top</a>
+
+  <!-- toc overlay -->
+  <div class="overlay" id="tocOverlay" aria-hidden="true">
+    <div class="overlay-panel" role="dialog" aria-modal="true" aria-label="Table of contents">
+      <div class="overlay-header">
+        <div class="overlay-title">Contents</div>
+        <button class="overlay-close" id="tocCloseBtn" aria-label="Close contents">✕</button>
+      </div>
+
+      <div class="overlay-body">
+        <a class="toc-link" data-target="start" href="#start">1) ISPs</a>
+        <a class="toc-link" data-target="what-is" href="#what-is">2) What an ISP is</a>
+        <a class="toc-link" data-target="sg-system" href="#sg-system">3) Where it sits in Singapore’s system</a>
+        <a class="toc-link" data-target="changes" href="#changes">4) What it changes (and what it doesn’t)</a>
+        <a class="toc-link" data-target="mistakes" href="#mistakes">5) Common mistakes and pain points</a>
+        <a class="toc-link" data-target="how-people-choose" href="#how-people-choose">6) How people usually choose tiers</a>
+        <a class="toc-link" data-target="need-now" href="#need-now">7) Do you need it (who it’s for)</a>
+        <a class="toc-link" data-target="plans" href="#plans">8) Plans on the market (by ward tier)</a>
+        <a class="toc-link" data-target="comparison" href="#comparison">9) Comparison of ISPs</a>
+        <a class="toc-link" data-target="before-buy" href="#before-buy">10) Before you buy</a>
+        <a class="toc-link" data-target="glossary" href="#glossary">11) Glossary</a>
+        <a class="toc-link" data-target="enough" href="#enough">12) What “enough” looks like</a>
+      </div>
+    </div>
+  </div>
+
+    <!-- global decor layer (hidden on hero, appears after you scroll past hero) -->
+  <div class="decor-layer" aria-hidden="true">
+    <div class="kopi-decor decor-eggs"></div>
+    <div class="kopi-decor decor-toast"></div>
+    <div class="kopi-decor decor-milk"></div>
+    <div class="kopi-decor decor-coffee"></div>
+  </div>
+
+  <main class="container">
+    <!-- hero -->
+    <section class="chapter wash wash-cream hero hero-kopitiam hero-split" id="start">
+      <div class="hero-fold">
+        <p class="kicker reveal-soft">optional hospital layer</p>
+        <h1 class="site-title reveal-soft">Integrated Shield Plans (ISPs)</h1>
+      </div>
+
+      <div class="hero-below">
+        <p class="lead center reveal-soft">
+          Integrated Shield Plans are optional private plans that sit on top of MediShield Life,
+          mainly to reduce gaps when you choose higher ward classes or private hospitals.
+        </p>
+
+        <div class="boundary reveal-soft">
+          Educational only. Not advice. No endorsements. No insurer affiliations.
+        </div>
+
+        <p class="framing center reveal-soft">
+          A simple idea: ISPs are about coverage ceilings and comfort choice,
+          not about making healthcare “free”.
+        </p>
+
+        <div class="spacer-xl"></div>
+        <p class="small center reveal-soft muted">
+          Tip: use “Contents” (bottom-right) to jump around.
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- what is -->
+    <section class="chapter wash wash-blue" id="what-is">
+      <h2 class="center reveal-soft">What an Integrated Shield Plan is</h2>
+
+      <p class="reveal-fast">
+        An Integrated Shield Plan (ISP) is private medical insurance offered by private insurers,
+        providing additional coverage on top of MediShield Life.
+      </p>
+
+      <div class="card reveal-fast">
+        <h3>Two components (one combined experience)</h3>
+        <ul>
+          <li><strong>MediShield Life component</strong>, sized around Class B2/C bills in public hospitals</li>
+          <li><strong>Additional private component</strong>, targeted at higher ward classes or private hospitals (policy terms apply)</li>
+        </ul>
+        <p class="muted">
+          The private insurer typically acts as the single point of contact for premium collection and claims disbursement.
+        </p>
+      </div>
+
+      <p class="reveal-fast">
+        The clean mental model: MediShield Life is the baseline, ISPs are optional layers for higher bill settings.
+      </p>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- singapore system -->
+    <section class="chapter wash wash-purple" id="sg-system">
+      <h2 class="center reveal-soft">
+        Where it sits in Singapore’s system<br>
+        <span class="muted">MediShield Life → ISP</span>
+      </h2>
+
+      <p class="reveal-fast">
+        If you anchor on MediShield Life first, ISPs become easier to evaluate.
+        MediShield Life is sized around subsidised care, ISPs mainly matter when you want more coverage for higher bill settings.
+      </p>
+
+      <div class="stack reveal-fast">
+        <a class="stack-item" href="medishield.html" style="text-decoration:none; display:block;">
+          <div class="stack-title">Base layer: MediShield Life</div>
+          <div class="stack-body">
+            National baseline for large hospital bills and certain treatments, with cost-sharing and claim limits.
+          </div>
+        </a>
+
+        <div class="stack-item">
+          <div class="stack-title">Optional layer: Integrated Shield Plans (ISP)</div>
+          <div class="stack-body">
+            Private insurer coverage that increases coverage limits for higher wards or private hospitals, subject to policy terms.
+          </div>
+        </div>
+      </div>
+
+      <div class="note reveal-fast">
+        <p>
+          Small note: the “gap” people feel is usually not because MediShield Life is broken,
+          it’s because the bill setting changed, higher wards or private charges, specialist choice, and so on.
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- what it changes -->
+    <section class="chapter wash wash-green" id="changes">
+      <h2 class="center reveal-soft">What it changes, and what it doesn’t</h2>
+
+      <div class="two-col reveal-fast">
+        <div class="card">
+          <h3>What ISPs change</h3>
+          <ul>
+            <li>higher coverage limits (vs MediShield Life alone)</li>
+            <li>less “shock” when choosing higher wards or private hospitals</li>
+            <li>more predictable planning for higher-bill environments</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>What ISPs don’t change</h3>
+          <ul>
+            <li>MediShield Life still forms the base layer</li>
+            <li>you still face cost-sharing (deductibles, co-insurance), it doesn’t become free</li>
+            <li>policy terms still matter, exclusions, limits, claimable items</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="boundary reveal-fast">
+        ISPs mostly change your coverage ceiling and hospital setting options, not the existence of trade-offs
+      </div>
+
+      <p class="reveal-fast">
+        Another framing: ISPs are less about “medical necessity” and more about your preference
+        for hospital choice, comfort, and bill-size uncertainty.
+      </p>
+
+      <div class="card reveal-fast">
+        <h3>Where riders fit (context only)</h3>
+        <p class="muted">
+          You may see the word <span class="gloss" data-term="rider">rider</span> when people talk about ISPs.
+          It is not a separate base plan, it is an add-on attached to an ISP that can change how you share costs or add benefits,
+          subject to terms.
+        </p>
+        <p class="muted">
+          In practice: an ISP answers “what ward / bill setting am i sized for”, a rider answers “how much do i still pay when i claim”.
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- common mistakes -->
+    <section class="chapter wash wash-cream" id="mistakes">
+      <h2 class="center reveal-soft">Common mistakes and pain points</h2>
+
+      <div class="two-col reveal-fast">
+        <div class="card">
+          <h3>Common misunderstandings</h3>
+          <ul>
+            <li>thinking an ISP makes healthcare “free” (it doesn’t, cost-sharing still exists)</li>
+            <li>buying private hospital coverage without a plan to sustain premiums later</li>
+            <li>assuming “higher tier” automatically means “better for me”</li>
+            <li>treating hospital insurance like an investment product (different job, different trade-offs)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Where people feel friction</h3>
+          <ul>
+            <li>claims admin, paperwork, and uncertainty during a stressful period</li>
+            <li>cashflow concerns, “how much do i pay first”</li>
+            <li>pre-existing conditions and what counts as excluded</li>
+            <li>switching plans later, especially after health changes</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="note reveal-fast">
+        <p>
+          The takeaway: a “good plan” is not just coverage, it’s also whether you can use it calmly when you need it.
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- how people choose -->
+    <section class="chapter wash wash-blue" id="how-people-choose">
+      <h2 class="center reveal-soft">How people usually choose tiers</h2>
+
+      <p class="reveal-fast">
+        This isn’t a recommendation, just a simple way to translate tiers into real choices.
+      </p>
+
+      <div class="two-col reveal-fast">
+        <div class="card">
+          <h3>Tier-first (most useful starting point)</h3>
+          <ul>
+            <li><strong>B1</strong>: “public hospital, but i want higher ward comfort”</li>
+            <li><strong>A</strong>: “i want higher ward comfort and i’m okay with a higher bill environment”</li>
+            <li><strong>Private</strong>: “private hospital choice matters to me, and i can sustain the long-run premium”</li>
+          </ul>
+          <p class="muted">
+            A useful way to think about this: start with the hospital setting you would actually pick on a normal day, not a fear day.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>How insurers differ (without rankings)</h3>
+          <ul>
+            <li><strong>process</strong>: ease of claims and admin experience</li>
+            <li><strong>network</strong>: how strongly the plan nudges certain provider pathways</li>
+            <li><strong>limits</strong>: how the plan defines caps and claimable items</li>
+            <li><strong>pricing</strong>: how premiums evolve over time (not just entry premium)</li>
+          </ul>
+          <p class="muted">
+            Why this matters: two plans can look similar on a brochure but feel different when you’re actually claiming.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- do you need it -->
+    <section class="chapter wash wash-green" id="need-now">
+      <h2 class="center reveal-soft">Do you need an ISP? Who is it for?</h2>
+
+      <p class="reveal-fast">
+        An ISP tends to make sense when you care about hospital setting choice,
+        and you want more coverage when bills move into higher ward classes or private hospitals.
+      </p>
+
+      <div class="two-col reveal-fast">
+        <div class="card">
+          <h3>Tends to suit</h3>
+          <ul>
+            <li>people who strongly prefer B1, A, or private hospital settings</li>
+            <li>people who want higher coverage ceilings for peace of mind</li>
+            <li>people who can carry premiums long-term (not just now)</li>
+            <li>people without strong employer hospital coverage (or who want continuity)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Might not be urgent</h3>
+          <ul>
+            <li>people comfortable with MediShield Life as the baseline</li>
+            <li>people with strong employer coverage (for now)</li>
+            <li>people whose budget would be stretched later by rising premiums</li>
+            <li>people buying a high tier “just in case”, without a plan to sustain it</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="boundary reveal-fast">
+        The main question is not “can i buy it”, it’s “can i keep it later”
+      </div>
+
+      <div class="note reveal-fast">
+        <p>
+          What this means in practice: if you can’t imagine paying the premium at 55 or 65, it’s a sign the tier is too high for you today.
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- plans -->
+    <section class="chapter wash wash-cream" id="plans">
+      <h2 class="center reveal-soft">Plans on the market (by ward tier)</h2>
+
+      <p class="reveal-fast">
+        Here are the integrated shield plans listed by moh, grouped by the ward tier they’re meant to cover
+      </p>
+
+      <div class="note reveal-fast">
+        <p>
+          Snapshot reference: MOH “List of Integrated Shield Plans and their targeted level of coverage”
+          (as at 1 Jan 2025)
+        </p>
+      </div>
+
+      <div class="plan-wide">
+  <div class="plan-grid reveal-fast">
+    <!-- Basic / B2-C -->
+    <details class="card plan-card plan-acc">
+      <summary class="plan-sum">
+        <span>Basic (Public hospital Class B2/C)</span>
+      </summary>
+
+      <div class="plan-body">
+        <ul class="plan-list">
+          <li><strong>MediShield Life</strong></li>
+          <li>Income IncomeShield Plan C<span class="fn">*</span></li>
+          <li>Income Enhanced IncomeShield C<span class="fn">*</span></li>
+        </ul>
+
+        <p class="muted">
+          Most people will see this tier referenced because MediShield Life benefits are sized around B2/C bills.
+        </p>
+      </div>
+    </details>
+
+    <!-- Standard IPs (B1 coverage) -->
+    <details class="card plan-card plan-acc">
+      <summary class="plan-sum">
+        <span>Standard IPs (Public hospital Class B1)</span>
+      </summary>
+
+      <div class="plan-body">
+        <ul class="plan-list">
+          <li>Income IncomeShield Standard Plan</li>
+          <li>AIA HealthShield Gold Max Standard Plan</li>
+          <li>Great Eastern GREAT SupremeHealth STANDARD</li>
+          <li>Prudential PRUShield Standard Plan</li>
+          <li>Singlife Shield Standard Plan</li>
+          <li>HSBC Life Shield Standard Plan</li>
+          <li>Raffles Shield Standard Plan</li>
+        </ul>
+
+        <p class="muted">
+          A common “public hospital but higher ward” anchor tier.
+        </p>
+      </div>
+    </details>
+
+    <!-- B1 plans -->
+    <details class="card plan-card plan-acc">
+      <summary class="plan-sum">
+        <span>Class B1 Plans</span>
+      </summary>
+
+      <div class="plan-body">
+        <ul class="plan-list">
+          <li>AIA HealthShield Gold Max C<span class="fn">*</span></li>
+          <li>AIA HealthShield Gold Max B Lite</li>
+          <li>Great Eastern GREAT SupremeHealth B<span class="fn">*</span></li>
+          <li>Great Eastern GREAT SupremeHealth B Plus</li>
+          <li>Income IncomeShield Plan B<span class="fn">*</span></li>
+          <li>Income Enhanced IncomeShield Basic</li>
+          <li>Prudential PRUShield B<span class="fn">*</span></li>
+          <li>Raffles Shield B</li>
+          <li>Singlife Shield Plan 3</li>
+        </ul>
+
+        <p class="muted">
+          Similar “B1” target, but product naming differs by insurer.
+        </p>
+      </div>
+    </details>
+
+    <!-- A plans -->
+    <details class="card plan-card plan-acc">
+      <summary class="plan-sum">
+        <span>Class A Plans (Public hospital Class A)</span>
+      </summary>
+
+      <div class="plan-body">
+        <ul class="plan-list">
+          <li>AIA HealthShield Gold Max B</li>
+          <li>Great Eastern GREAT SupremeHealth A Plus</li>
+          <li>HSBC Life Shield Plan B</li>
+          <li>Income IncomeShield Plan A<span class="fn">*</span></li>
+          <li>Income Enhanced IncomeShield Advantage</li>
+          <li>Prudential PRUShield A<span class="fn">*</span></li>
+          <li>Prudential PRUShield Plus</li>
+          <li>Raffles Shield A</li>
+          <li>Singlife Shield Plan 2</li>
+        </ul>
+
+        <p class="muted">
+          A step up in bill environment, premiums typically reflect that.
+        </p>
+      </div>
+    </details>
+
+    <!-- Private plans -->
+    <details class="card plan-card plan-acc">
+      <summary class="plan-sum">
+        <span>Private Hospital Plans</span>
+      </summary>
+
+      <div class="plan-body">
+        <ul class="plan-list">
+          <li>AIA HealthShield Gold Max A</li>
+          <li>Great Eastern GREAT SupremeHealth A<span class="fn">*</span></li>
+          <li>Great Eastern GREAT SupremeHealth P Plus</li>
+          <li>HSBC Life Shield Plan A</li>
+          <li>Income IncomeShield Plan P<span class="fn">*</span></li>
+          <li>Income Enhanced IncomeShield Preferred</li>
+          <li>Prudential PRUShield Premier</li>
+          <li>Raffles Shield Private</li>
+          <li>Singlife Shield Plan 1</li>
+          <li>Singlife Shield Starter</li>
+        </ul>
+
+        <p class="muted">
+          Highest bill environment, highest long-term premium commitment for most people.
+        </p>
+      </div>
+    </details>
+  </div>
+
+  <p class="footnote muted reveal-fast">
+    <span class="fn">*</span> No longer offered to new members, existing members may continue to renew.
+  </p>
+</div>
+
+      <div class="boundary reveal-fast">
+        Quick self-check: pick the tier you can sustain later, not the tier that looks cheap at age 25
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- comparison -->
+    <section class="chapter wash wash-purple" id="comparison">
+      <h2 class="center reveal-soft">Comparison of ISPs</h2>
+
+      <div class="resource-list reveal-fast">
+        <div class="resource">
+          <h3>MOH, comparison of Integrated Shield Plans</h3>
+          <p class="muted">
+            Official tables by tier, plus claim and service indicators.
+          </p>
+          <a class="ext" href="https://www.moh.gov.sg/managing-expenses/schemes-and-subsidies/integrated-shield-plans/comparision-of-integrated-shield-plans/" target="_blank" rel="noopener noreferrer">
+            Open external site ↗
+          </a>
+        </div>
+
+        <div class="resource">
+          <h3>MoneySmart, Integrated Shield Plans overview</h3>
+          <p class="muted">
+            A consumer-friendly summary and comparison style write-up, useful as a second perspective alongside MOH.
+          </p>
+          <a class="ext" href="https://www.moneysmart.sg/health-insurance/best-integrated-shield-plans-singapore-ms" target="_blank" rel="noopener noreferrer">
+            Open external site ↗
+          </a>
+        </div>
+      </div>
+
+      <div class="note reveal-fast">
+        <p>
+          Quick tip: use MOH to check the facts, then use other write-ups to see how people talk about trade-offs, don’t treat any single page as the whole truth.
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- checklist -->
+    <section class="chapter wash wash-green" id="before-buy">
+      <h2 class="center reveal-soft">Before you buy</h2>
+
+      <div class="two-col reveal-fast">
+        <div class="card">
+          <h3>Fit questions</h3>
+          <ul>
+            <li>which ward class am i actually comfortable with, in real life</li>
+            <li>am i choosing private because i want it, or because i’m anxious</li>
+            <li>what coverage do i already have (MediShield Life, employer plans)</li>
+            <li>if my income dips, does this become a burden</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Mechanics questions</h3>
+          <ul>
+            <li>what are the claim limits and key exclusions</li>
+            <li>what costs do i still pay (deductibles, co-insurance)</li>
+            <li>how are <span class="gloss" data-term="premium">premiums</span> expected to rise with age</li>
+            <li>what happens if i stop paying, downgrade, or switch insurers</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="boundary reveal-fast">
+        <p>
+          If you can’t explain the plan in one minute, it’s usually a sign you should pause.
+          Make sure you understand how a plan works before signing a contract!
+          Clarity beats optimisation.
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- glossary -->
+    <section class="chapter wash wash-cream" id="glossary">
+      <h2 class="center reveal-soft">Glossary</h2>
+
+      <p class="reveal-fast">
+        Hover on desktop or tap on mobile for underlined terms.
+        These are the ones that keep showing up across hospital coverage.
+      </p>
+
+      <div class="glossary-grid reveal-fast">
+        <div class="glossary-item">
+          <h3>Premium</h3>
+          <p>The amount you pay (monthly or yearly) to keep coverage active.</p>
+        </div>
+
+        <div class="glossary-item">
+          <h3>Deductible</h3>
+          <p>The fixed amount you pay first before insurance starts paying (simplified).</p>
+        </div>
+
+        <div class="glossary-item">
+          <h3>Co-insurance</h3>
+          <p>The percentage you pay after deductible, insurer pays the rest (simplified).</p>
+        </div>
+
+        <div class="glossary-item">
+          <h3>Exclusion</h3>
+          <p>Situations or conditions the policy does not cover.</p>
+        </div>
+
+        <div class="glossary-item">
+          <h3>Coverage</h3>
+          <p>What the policy pays for, under what conditions, and up to what limits.</p>
+        </div>
+
+        <div class="glossary-item">
+          <h3>Claim limit</h3>
+          <p>A cap on how much can be claimed for certain services, depending on the policy.</p>
+        </div>
+
+        <!-- keep Rider last so it can span both columns with your CSS rule -->
+        <div class="glossary-item span-2">
+          <h3>Rider</h3>
+          <p>
+            An optional add-on to a base plan, for example an ISP, that changes how you share costs
+            (like co-insurance and deductibles) or adds extra features, subject to policy terms.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- enough -->
+    <section class="chapter wash wash-blue" id="enough">
+      <h2 class="center reveal-soft">What “enough” looks like</h2>
+
+      <p class="reveal-fast">
+        “Enough” is usually not the plan with the highest tier.
+        “Enough” is the plan that matches your real preferences and your long-term ability to pay,
+        without turning insurance into a financial stressor.
+      </p>
+
+      <div class="note reveal-fast">
+        <p class="center">
+          ISPs don’t remove uncertainty, they narrow how much a medical bill can disrupt everything else.
+        </p>
+      </div>
+
+      <div class="link-row reveal-fast">
+        <a class="button-link" href="medishield.html">Back to MediShield Life</a>
+        <a class="button-link" href="term.html">Next, Term insurance</a>
+      </div>
+
+      <div class="footer reveal-fast">
+        <p class="center muted small">Educational only. Not advice. No endorsements. No insurer affiliations.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- tooltip -->
+  <div class="tooltip" id="tooltip" role="tooltip" aria-hidden="true"></div>
+
+  <!-- js last -->
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,799 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Whole Life Insurance | Policy Kopitiam</title>
+  <meta name="description" content="A neutral explainer on whole life insurance in Singapore, what problem it solves vs term, how guarantees and cash value work, and how it differs from ILPs." />
+
+  <!-- fonts stay global so the whole site feels like one thing -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,650;9..144,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <img src="images/favicon.png" alt="" class="brand-mark" aria-hidden="true">
+        <span class="brand-name">Policy Kopitiam</span>
+      </div>
+
+      <nav class="topbar-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+
+        <div class="nav-dropdown">
+          <button class="nav-dropbtn" id="productsBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="productsMenu">
+            Products
+          </button>
+
+          <div class="nav-dropdown-panel" id="productsMenu" role="menu" aria-label="Products menu">
+            <a role="menuitem" href="medishield.html">MediShield Life</a>
+            <a role="menuitem" href="isp.html">ISPs</a>
+            <a role="menuitem" href="term.html">Term</a>
+            <a role="menuitem" href="whole.html">Whole Life</a>
+            <a role="menuitem" href="ilp.html">ILP</a>
+          </div>
+        </div>
+
+        <a href="about.html">About</a>
+        <a href="disclaimer.html">Disclaimer</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- floating controls -->
+  <button class="fab" id="tocBtn" aria-haspopup="dialog" aria-controls="tocOverlay">Contents</button>
+  <a class="backtotop" id="backToTop" href="#start" aria-label="Back to top">↑ Top</a>
+
+  <!-- toc overlay -->
+  <div class="overlay" id="tocOverlay" aria-hidden="true">
+    <div class="overlay-panel" role="dialog" aria-modal="true" aria-label="Table of contents">
+      <div class="overlay-header">
+        <div class="overlay-title">Contents</div>
+        <button class="overlay-close" id="tocCloseBtn" aria-label="Close contents">✕</button>
+      </div>
+
+      <div class="overlay-body">
+        <a class="toc-link" data-target="start" href="#start">1) Whole life</a>
+        <a class="toc-link" data-target="one-minute" href="#one-minute">2) What it is (one minute)</a>
+        <a class="toc-link" data-target="concept" href="#concept">3) How it differs from term</a>
+        <a class="toc-link" data-target="mechanics" href="#mechanics">4) Mechanics unique to whole life</a>
+        <a class="toc-link" data-target="guarantees" href="#guarantees">5) Guarantees vs non-guarantees</a>
+        <a class="toc-link" data-target="par-nonpar" href="#par-nonpar">6) Participating (PAR) vs Non-Participating (Non-PAR)</a>
+        <a class="toc-link" data-target="vs-ilp" href="#vs-ilp">7) Whole life vs ILPs</a>
+        <a class="toc-link" data-target="strengths-general" href="#compare">8) Strengths and weaknesses</a>
+        <a class="toc-link" data-target="before-buy" href="#before-buy">9) Before you buy (questions + checks)</a>
+        <a class="toc-link" data-target="mistakes" href="#mistakes">10) Common mistakes</a>
+        <a class="toc-link" data-target="resources" href="#resources">11) External references</a>
+        <a class="toc-link" data-target="glossary" href="#glossary">12) Glossary (whole life specific)</a>
+        <a class="toc-link" data-target="enough" href="#enough">13) What “enough” looks like</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- global decor layer (hidden on hero, appears after you scroll past hero) -->
+  <div class="decor-layer" aria-hidden="true">
+    <div class="kopi-decor decor-eggs"></div>
+    <div class="kopi-decor decor-toast"></div>
+    <div class="kopi-decor decor-milk"></div>
+    <div class="kopi-decor decor-coffee"></div>
+  </div>
+
+  <main class="container">
+    <!-- hero -->
+    <section class="chapter wash wash-cream hero hero-kopitiam hero-split" id="start">
+      <div class="hero-fold">
+        <p class="kicker reveal-soft">permanent protection, long-term commitment</p>
+        <h1 class="site-title reveal-soft">Whole Life insurance</h1>
+      </div>
+
+      <div class="hero-below">
+        <p class="lead center reveal-soft">
+          Whole life is built for risks that do not naturally expire,
+          and for people who value permanence and simplicity over pure cost efficiency.
+        </p>
+
+        <div class="boundary reveal-soft">
+          Educational only. Not advice. No endorsements. No insurer affiliations.
+        </div>
+
+        <p class="framing center reveal-soft">
+          A simple idea: whole life trades flexibility for lifetime coverage and a clearer floor.
+        </p>
+
+        <div class="spacer-xl"></div>
+        <p class="small center reveal-soft muted">
+          Tip: use “Contents” (bottom-right) to jump around.
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- one minute -->
+    <section class="chapter wash wash-blue" id="one-minute">
+      <h2 class="center reveal-soft">What it is, in one minute</h2>
+
+      <p class="reveal-fast">
+        Whole life insurance provides coverage for your entire life, subject to policy terms and premiums being paid as agreed.
+        It usually includes a savings structure inside the policy, which affects what happens if you keep it long-term or exit early.
+      </p>
+
+      <div class="card reveal-fast">
+        <h3>What it is trying to do</h3>
+        <p>
+          Term insurance solves protection for a specific window.
+          Whole life exists for people who want protection that does not expire,
+          especially when it is hard to predict future needs or discipline over decades.
+        </p>
+        <p class="muted">
+          It is not designed to be the cheapest protection per dollar, it is designed to make protection permanent.
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- concept -->
+    <section class="chapter wash wash-green" id="concept">
+      <h2 class="center reveal-soft">How whole life differs from term</h2>
+
+      <p class="reveal-fast">
+        The difference is not just features, it is the problem being solved.
+        Term is time-bounded by design, whole life is open-ended by design.
+      </p>
+
+      <div class="two-col reveal-fast">
+        <div class="card">
+          <h3>Term</h3>
+          <p class="muted">a responsibility window</p>
+          <p>
+            Built for situations where you can name the window,
+            mortgage years, dependants, or an income replacement period.
+            Coverage ends when the window ends.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Whole life</h3>
+          <p class="muted">a lifetime horizon</p>
+          <p>
+            Built for risks that do not have a natural expiry,
+            and for people who want some coverage to persist even after working years.
+          </p>
+        </div>
+      </div>
+
+      <div class="note reveal-fast">
+        <p>
+          Claim triggers such as <span class="gloss" data-term="death">death</span>,
+          <span class="gloss" data-term="tpd">TPD</span>, and
+          <span class="gloss" data-term="ci">CI</span> follow the same basic idea across term, whole life, and ILPs.
+          What changes here is the duration of coverage, and what happens if you keep the policy for decades or exit early.
+        </p>
+      </div>
+
+      <div class="boundary reveal-fast">
+        Term expires by design, whole life persists by design
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- mechanics -->
+    <section class="chapter wash wash-purple" id="mechanics">
+      <h2 class="center reveal-soft">Mechanics unique to whole life</h2>
+
+      <p class="reveal-fast">
+        Whole life adds extra structure compared to term.
+        That structure is the reason premiums are higher, and also the reason whole life behaves differently over time.
+      </p>
+
+      <div class="two-col reveal-fast">
+        <div class="card">
+          <h3>Cash value</h3>
+          <p>
+            Whole life policies accumulate an internal
+            <span class="gloss" data-term="cash-value">cash value</span>
+            over time.
+          </p>
+          <p class="muted">
+            This is not a separate investment account.
+            It is a policy construct that reflects how the plan is designed to work over decades.
+          </p>
+          <p>
+            Cash value influences the policy’s options later on,
+            including surrender outcomes, paid-up conversion, and policy loans.
+            Practically, it changes the feel of the policy,
+            you are not only paying for risk transfer, you are paying for a long-run structure.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Surrender and paid-up options</h3>
+          <p>
+            Exiting early may result in a
+            <span class="gloss" data-term="surrender-value">surrender value</span>,
+            or conversion to a reduced paid-up policy.
+          </p>
+          <p>
+            Because whole life is built for long time horizons,
+            surrendering early can mean receiving less than the total premiums paid,
+            especially in the first years when costs are front-loaded.
+          </p>
+          <p class="muted">
+            This is not a “gotcha”, it is the predictable result of a long-term commitment product being used short-term.
+          </p>
+        </div>
+      </div>
+
+      <div class="card reveal-fast">
+  <h3>Toggle the mindset</h3>
+  <p class="muted">
+    Same protection need, different time horizons. This helps explain why whole life can feel “worth it” to some people and “pointless” to others
+  </p>
+
+  <div class="mindset" role="group" aria-label="Mindset toggle">
+    <input class="mindset-radio" type="radio" name="mindset" id="mindsetShort" checked>
+    <label class="mindset-btn" for="mindsetShort">thinking short-term</label>
+
+    <input class="mindset-radio" type="radio" name="mindset" id="mindsetLong">
+    <label class="mindset-btn" for="mindsetLong">thinking long-term</label>
+
+    <div class="mindset-panels">
+      <div class="mindset-panel" data-panel="short">
+        <p>
+          <strong>question you keep asking:</strong>
+            What if my priorities, income, or plans change in the next few years?
+        </p>
+        <p class="muted">
+            Whole life often feels unattractive here because you are committing to permanence
+            at a stage where flexibility feels more valuable than certainty.
+        </p>
+      </div>
+
+      <div class="mindset-panel" data-panel="long">
+        <p>
+          <strong>question you keep asking:</strong>
+           Can I make this decision once and not have to rethink coverage later in life?
+        </p>
+        <p class="muted">
+          Whole life often feels reassuring here because the structure carries protection forward,
+           reducing the need to re-underwrite or revisit the decision as circumstances change.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card reveal-fast">
+  <h3>What breaks if…</h3>
+  <p class="muted">
+    These are not “gotchas”, they are the predictable consequences of how whole life is structured
+  </p>
+
+  <div class="breaks">
+    <details class="break-item">
+      <summary>…i stop paying premiums halfway</summary>
+      <div class="break-body">
+        <p>
+          the policy may <span class="gloss" data-term="lapse">lapse</span>, or it may convert into a reduced paid-up policy,
+          depending on the contract and how much value has built up.
+        </p>
+        <p class="muted">
+          key idea, whole life rewards staying. early exits can feel inefficient because costs are front-loaded
+        </p>
+      </div>
+    </details>
+
+    <details class="break-item">
+      <summary>…i need cash, and i want to “take money out”</summary>
+      <div class="break-body">
+        <p>
+          you usually don’t “withdraw” like a bank account. common routes are surrendering (ending the policy),
+          or taking a <span class="gloss" data-term="policy-loan">policy loan</span> against cash value, terms vary by policy.
+        </p>
+        <p class="muted">
+          this is where <span class="gloss" data-term="cash-value">cash value</span> matters, it changes your options, but it is still a long-horizon design
+        </p>
+      </div>
+    </details>
+
+    <details class="break-item">
+      <summary>…i compare it directly to term on annual cost</summary>
+      <div class="break-body">
+        <p>
+          term is priced like renting coverage for a window, whole life is priced like locking coverage in for life.
+          the premium difference is largely the cost of permanence and guarantees.
+        </p>
+        <p class="muted">
+          apples-to-apples is not annual premium, it’s “what problem is this solving”
+        </p>
+      </div>
+    </details>
+
+    <details class="break-item">
+      <summary>…i assume “guaranteed” means “high returns”</summary>
+      <div class="break-body">
+        <p>
+          guaranteed values define a floor, not a target. non-guaranteed values can change with future conditions.
+        </p>
+        <p class="muted">
+          a useful habit, ask “which part is guaranteed” before asking “how much”
+        </p>
+      </div>
+    </details>
+  </div>
+</div>
+
+
+      <div class="card reveal-fast">
+        <h3>Why premiums are higher (what you are paying for)</h3>
+        <ul>
+          <li>coverage that does not expire, without needing future re-underwriting</li>
+          <li>contractual guarantees, which create a floor</li>
+          <li>the policy’s internal savings structure and long-run options</li>
+          <li>less reliance on you to keep revisiting decisions later</li>
+        </ul>
+        <p class="muted">
+          If term is priced like renting protection for a window, whole life is priced like locking protection in for life.
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- guarantees -->
+    <section class="chapter wash wash-blue" id="guarantees">
+      <h2 class="center reveal-soft">Guarantees vs non-guarantees</h2>
+
+      <p class="reveal-fast">
+        Many whole life plans separate outcomes into a guaranteed portion and a non-guaranteed portion.
+        This is one reason whole life discussions can feel confusing, the illustration shows multiple layers of certainty.
+      </p>
+
+      <p class="reveal-fast">
+        The split exists to balance certainty with long-run sustainability.
+        Fully guaranteeing everything would usually raise premiums sharply,
+        fully variable outcomes would remove the certainty many people are paying for.
+      </p>
+
+      <div class="two-col reveal-fast">
+        <div class="card">
+          <h3>Guaranteed</h3>
+          <p>
+            Contractually defined minimum benefits,
+            assuming premiums are paid as agreed.
+          </p>
+          <p class="muted">
+            Guarantees define the floor, not the target.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Non-guaranteed</h3>
+          <p>
+            Variable components that depend on insurer performance,
+            commonly seen in participating policies.
+          </p>
+          <p class="muted">
+            These values are illustrative rather than promised, they can change over time.
+          </p>
+        </div>
+      </div>
+
+      <div class="boundary reveal-fast">
+        A useful habit: ask “which part is guaranteed” before asking “how much”
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+<section class="chapter wash wash-purple" id="par-nonpar">
+  <h2 class="center reveal-soft">Participating (PAR) vs Non-Participating (Non-PAR)</h2>
+
+  <p class="reveal-fast">
+    Some whole life policies participate in the insurer’s long-term participating fund, others do not.
+    This choice mainly affects how uncertainty is shared, not whether the policy “works”.
+  </p>
+
+  <div class="two-col reveal-fast">
+    <div class="card">
+      <h3>Participating (PAR)</h3>
+      <ul>
+        <li>benefits usually split into guaranteed and non-guaranteed portions</li>
+        <li>non-guaranteed bonuses depend on insurer participating fund performance</li>
+        <li>outcomes are often smoothed over time, not tied to short-term market swings</li>
+        <li>more variability by design, in exchange for sharing in surplus</li>
+      </ul>
+      <p class="muted">
+        think: a clearer floor, plus a variable layer that can change over time
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Non-participating (Non-PAR)</h3>
+      <ul>
+        <li>benefits are fully defined at policy start</li>
+        <li>no bonuses, no participation in fund performance</li>
+        <li>outcomes are more bounded and predictable</li>
+        <li>less variability by design</li>
+      </ul>
+      <p class="muted">
+        think: what you see in the guaranteed schedule is the main story
+      </p>
+    </div>
+  </div>
+
+      <div class="note reveal-fast">
+    <p><strong>So should I choose PAR or Non-PAR?</strong></p>
+
+    <p>
+      This usually comes down to how much variability you are comfortable living with over a long time.
+      PAR policies trade some certainty for participation in a shared fund,
+      while Non-PAR policies trade that participation for clearer, fully defined outcomes.
+      Because PAR policies include this additional sharing mechanism,
+      their premiums are often higher than comparable Non-PAR designs.
+    </p>
+
+    <p class="muted">
+      A useful way to think about it is not “which pays more”,
+      but whether you prefer a bounded result you can see upfront,
+      or a structure where part of the outcome evolves over time.
+    </p>
+  </div>
+
+</section>
+
+    <div class="divider"></div>
+
+    <!-- vs ilp -->
+    <section class="chapter wash wash-green" id="vs-ilp">
+      <h2 class="center reveal-soft">Whole life vs <a href="ilp.html">ILPs</a></h2>
+
+      <p class="reveal-fast">
+        Both are long-term policies, but they allocate risk very differently.
+        Whole life prioritises insurance structure and a clearer floor,
+        ILPs prioritise investment flexibility and market participation.
+      </p>
+
+      <div class="two-col reveal-fast">
+        <div class="card">
+          <h3>Whole life (insurance-first)</h3>
+          <ul>
+            <li>premiums mainly fund protection and policy guarantees</li>
+            <li>cash value is internal, built around long-term holding</li>
+            <li>outcomes are bounded, less sensitive to short-term market swings</li>
+            <li>designed to reduce decision fatigue over decades</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>ILPs (investment-first)</h3>
+          <ul>
+            <li>premiums are split between insurance charges and investment units</li>
+            <li>account value fluctuates with market performance</li>
+            <li>charges and structure matter a lot over time</li>
+            <li>results depend heavily on behaviour, timing, and consistency</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="note reveal-fast">
+        <p>
+          A practical framing:
+          whole life reduces decision risk,
+          ILPs increase decision responsibility.
+          Neither is “better” in general, they just put uncertainty in different places.
+        </p>
+      </div>
+
+      <div class="boundary reveal-fast">
+        Similar shape does not mean similar risk
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- strengths general -->
+<section class="chapter wash wash-cream" id="compare">
+  <h2 class="center reveal-soft">Strengths and weaknesses</h2>
+
+  <p class="reveal-fast">
+    Whole life insurance is built around permanence.
+    It is not designed to win on cost per dollar of coverage,
+    it is designed to make protection persist without needing to be re-decided later.
+    That trade-off is the core of both its appeal and its friction.
+  </p>
+
+  <div class="two-col reveal-fast">
+    <div class="card">
+      <h3>Strengths</h3>
+      <ul>
+        <li>coverage is designed to last for life</li>
+        <li>guaranteed components create a clearer long-term floor</li>
+        <li>built-in commitment reduces the need to revisit decisions</li>
+        <li>less exposure to market swings compared to investment-linked products</li>
+      </ul>
+      <p class="muted">
+        Whole life feels “reassuring” when you value certainty and continuity.
+        You are paying more upfront to reduce future decision risk.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Weaknesses</h3>
+      <ul>
+        <li>higher premiums than pure protection products</li>
+        <li>less flexible if your needs or priorities change</li>
+        <li>early surrender is usually inefficient</li>
+        <li>not designed to maximise investment returns</li>
+      </ul>
+      <p class="muted">
+        Whole life feels “expensive” when you only need coverage for a fixed window.
+        Permanence becomes a cost rather than a benefit.
+      </p>
+    </div>
+  </div>
+
+  <div class="grid-3 reveal-fast">
+    <div class="card">
+      <h3>Compared to <a href="term.html">term</a></h3>
+      <ul>
+        <li>does not expire by design</li>
+        <li>less reliance on renewing later</li>
+        <li>higher premiums for the same sum assured</li>
+      </ul>
+      <p class="muted">
+        If term is “cover the window”, whole life is “lock it in”.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Compared to <a href="ilp.html">ILPs</a></h3>
+      <ul>
+        <li>clearer guarantees and bounded outcomes</li>
+        <li>less market-linked volatility</li>
+        <li>less flexibility and upside potential</li>
+      </ul>
+      <p class="muted">
+        Whole life trades growth potential for certainty.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Quick anchor</h3>
+      <ul>
+        <li>term solves a time window</li>
+        <li>whole life solves permanence</li>
+        <li>ILPs solve growth and flexibility</li>
+      </ul>
+      <p class="muted">
+        Same labels, very different commitments.
+      </p>
+    </div>
+  </div>
+
+  <div class="boundary reveal-fast">
+    Whole life reduces future decision risk, but increases upfront commitment
+  </div>
+</section>
+
+    <div class="divider"></div>
+
+    <!-- before buy -->
+    <section class="chapter wash wash-cream" id="before-buy">
+      <h2 class="center reveal-soft">Before you buy</h2>
+
+      <p class="reveal-fast">
+        Whole life is not complicated, but it is sticky.
+        The main risk is not misunderstanding a definition,
+        it is committing to a structure that you later want to unwind.
+      </p>
+
+      <div class="two-col reveal-fast">
+        <div class="card">
+          <h3>Fit questions</h3>
+          <ul>
+            <li>what problem am i solving that term does not solve, permanence or discipline</li>
+            <li>am i comfortable treating this as a decades-long commitment</li>
+            <li>do i want lifelong coverage, or is my need clearly time-bounded</li>
+            <li>do i already have coverage via employer, CPF, existing policies</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Mechanics questions</h3>
+          <ul>
+            <li>what exactly triggers payout, <span class="gloss" data-term="death">death</span>, <span class="gloss" data-term="tpd">TPD</span>, <span class="gloss" data-term="ci">CI</span>, and how are they defined</li>
+            <li>what are the key <span class="gloss" data-term="exclusion">exclusions</span></li>
+            <li>what happens if premiums stop early, lapse, surrender, or paid-up</li>
+            <li>what portion is guaranteed vs non-guaranteed, and what drives the non-guaranteed portion</li>
+            <li>is this participating or non-participating, and what does that change</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="note reveal-fast">
+        <p class="center">
+          Small habit that helps: ask to see the guaranteed schedule and surrender terms in the product summary,
+          not only brochure phrasing or illustration headlines
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- mistakes -->
+    <section class="chapter wash wash-green" id="mistakes">
+      <h2 class="center reveal-soft">Common mistakes</h2>
+
+      <p class="reveal-fast">
+        Most mistakes come from expecting whole life to behave like a flexible product.
+        These are common friction points, not personal failures.
+      </p>
+
+      <div class="grid-2 reveal-fast">
+        <div class="card">
+          <h3>Expecting flexibility from a commitment product</h3>
+          <p class="muted">
+            whole life is designed to reward staying, not switching
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Comparing returns instead of structure</h3>
+          <p class="muted">
+            whole life is built around permanence and guarantees, not return maximisation
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Underestimating early surrender effects</h3>
+          <p class="muted">
+            early exit can return less than total premiums paid, especially early on
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Ignoring the guaranteed vs non-guaranteed split</h3>
+          <p class="muted">
+            illustrations can look reassuring until you ask which part is actually promised
+          </p>
+        </div>
+      </div>
+
+      <div class="boundary reveal-fast">
+        If you want flexibility, build flexibility intentionally, do not assume a commitment product will behave like one
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- resources -->
+    <section class="chapter wash wash-purple" id="resources">
+      <h2 class="center reveal-soft">External references</h2>
+
+      <p class="reveal-fast">
+        This page focuses on structure and trade-offs, not rankings.
+        If you want to see how plans are commonly compared across insurers,
+        these external sites can be useful reference points.
+      </p>
+
+      <div class="resource-list reveal-fast">
+        <div class="resource">
+          <h3>CompareFirst, product comparison portal</h3>
+          <p class="muted">
+            An official-style portal for comparing features and benefits across insurers in a more standardised format.
+          </p>
+          <a class="ext" href="https://www.comparefirst.sg/wap/homeEvent.action" target="_blank" rel="noopener noreferrer">
+            Open external site ↗
+          </a>
+        </div>
+
+        <div class="resource">
+          <h3>MoneySmart, life insurance overview</h3>
+          <p class="muted">
+            A consumer-facing overview that shows common framing and market language, useful as a second perspective.
+          </p>
+          <a class="ext" href="https://www.moneysmart.sg/life-insurance/best-life-insurance-plans-ms" target="_blank" rel="noopener noreferrer">
+            Open external site ↗
+          </a>
+        </div>
+      </div>
+
+      <div class="note reveal-fast">
+        <p>
+          Quick tip: use portals to check factual features and definitions,
+          then use write-ups to see how people talk about trade-offs,
+          do not treat any single page as the whole truth.
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- glossary -->
+    <section class="chapter wash wash-cream" id="glossary">
+      <h2 class="center reveal-soft">Glossary</h2>
+
+      <p class="reveal-fast">
+        Hover on desktop or tap on mobile for underlined terms.
+        This page avoids repeating the term glossary, these are the whole life specific ones.
+      </p>
+
+      <div class="glossary-grid reveal-fast">
+        <div class="glossary-item">
+          <h3>Cash value</h3>
+          <p>Internal policy value that builds over time and affects surrender outcomes and options.</p>
+        </div>
+
+        <div class="glossary-item">
+          <h3>Surrender value</h3>
+          <p>The amount payable if the policy is terminated early, often lower than total premiums paid in early years.</p>
+        </div>
+
+        <div class="glossary-item">
+          <h3>Participating (par)</h3>
+          <p>A policy that may receive non-guaranteed bonuses from the insurer’s participating fund.</p>
+        </div>
+
+        <div class="glossary-item">
+          <h3>Non-participating (non-par)</h3>
+          <p>A policy with benefits fully defined at inception, with no bonuses.</p>
+        </div>
+
+        <div class="glossary-item">
+          <h3>Guaranteed</h3>
+          <p>The minimum contractual benefits, assuming premiums are paid as agreed.</p>
+        </div>
+
+        <div class="glossary-item">
+          <h3>Non-guaranteed</h3>
+          <p>Illustrated benefits that depend on future insurer performance and may change over time.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- enough -->
+    <section class="chapter wash wash-blue" id="enough">
+      <h2 class="center reveal-soft">What “enough” looks like</h2>
+
+      <p class="reveal-fast">
+        For whole life, “enough” is usually not “maximum returns”.
+        It is “some protection continues, even when life moves past the years where i am actively planning insurance”.
+      </p>
+
+      <div class="note reveal-fast">
+        <p class="center">
+          Whole life insurance shifts effort from ongoing decision-making to upfront commitment, 
+          for people who prefer stability over adjustment.
+        </p>
+      </div>
+
+      <div class="link-row reveal-fast">
+        <a class="button-link" href="isp.html">Back to ISPs</a>
+        <a class="button-link" href="term.html">Back to Term</a>
+        <a class="button-link" href="ilp.html">Next, ILPs</a>
+      </div>
+
+      <div class="footer reveal-fast">
+        <p class="center muted small">Educational only. Not advice. No endorsements. No insurer affiliations.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- tooltip -->
+  <div class="tooltip" id="tooltip" role="tooltip" aria-hidden="true"></div>
+
+  <!-- js last -->
+  <script src="app.js"></script>
+</body>
+</html>

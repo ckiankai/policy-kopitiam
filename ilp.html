@@ -1,0 +1,964 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Investment-Linked Policies (ILPs) | Policy Kopitiam</title>
+  <meta name="description" content="A calm, neutral explainer on ILPs in Singapore, how they work, where charges bite, what behaviour risks look like, and a few interactive tools to build intuition." />
+
+  <!-- fonts stay global so the whole site feels like one thing -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,650;9..144,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <img src="images/favicon.png" alt="" class="brand-mark" aria-hidden="true">
+        <span class="brand-name">Policy Kopitiam</span>
+      </div>
+
+      <nav class="topbar-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+
+        <div class="nav-dropdown">
+          <button class="nav-dropbtn" id="productsBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="productsMenu">
+            Products
+          </button>
+
+          <div class="nav-dropdown-panel" id="productsMenu" role="menu" aria-label="Products menu">
+            <a role="menuitem" href="medishield.html">MediShield Life</a>
+            <a role="menuitem" href="isp.html">ISPs</a>
+            <a role="menuitem" href="term.html">Term</a>
+            <a role="menuitem" href="whole.html">Whole Life</a>
+            <a role="menuitem" href="ilp.html">ILP</a>
+          </div>
+        </div>
+
+        <a href="about.html">About</a>
+        <a href="disclaimer.html">Disclaimer</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- floating controls -->
+  <button class="fab" id="tocBtn" aria-haspopup="dialog" aria-controls="tocOverlay">Contents</button>
+  <a class="backtotop" id="backToTop" href="#start" aria-label="Back to top">↑ Top</a>
+
+  <!-- toc overlay -->
+  <div class="overlay" id="tocOverlay" aria-hidden="true">
+    <div class="overlay-panel" role="dialog" aria-modal="true" aria-label="Table of contents">
+      <div class="overlay-header">
+        <div class="overlay-title">Contents</div>
+        <button class="overlay-close" id="tocCloseBtn" aria-label="Close contents">✕</button>
+      </div>
+
+      <div class="overlay-body">
+  <a class="toc-link" data-target="start" href="#start">1) ILPs</a>
+  <a class="toc-link" data-target="what-is" href="#what-is">2) What an ILP is (one minute)</a>
+  <a class="toc-link" data-target="market" href="#market">3) How ILPs grow (and don’t)</a>
+  <a class="toc-link" data-target="mechanics" href="#mechanics">4) Charges, the silent driver</a>
+  <a class="toc-link" data-target="calc" href="#calc">5) Charges drag visualiser</a>
+  <a class="toc-link" data-target="types" href="#types">6) Allocation + volatility toy</a>
+  <a class="toc-link" data-target="mistakes" href="#mistakes">7) What breaks if… (common ILP pain points)</a>
+  <a class="toc-link" data-target="strengths-general" href="#compare">8) Strengths and weaknesses</a>
+  <a class="toc-link" data-target="recommendation" href="#recommendation">9) A common recommendation: separate protection and investing</a>
+  <a class="toc-link" data-target="before-buy" href="#before-buy">10) Before you buy (questions + checks)</a>
+  <a class="toc-link" data-target="resources" href="#resources">11) External references</a>
+  <a class="toc-link" data-target="glossary" href="#glossary">12) Glossary (ILP words)</a>
+  <a class="toc-link" data-target="enough" href="#enough">13) What “enough” looks like</a>
+</div>
+</div>
+</div>
+
+
+  <!-- global decor layer (hidden on hero, appears after you scroll past hero) -->
+  <div class="decor-layer" aria-hidden="true">
+    <div class="kopi-decor decor-eggs"></div>
+    <div class="kopi-decor decor-toast"></div>
+    <div class="kopi-decor decor-milk"></div>
+    <div class="kopi-decor decor-coffee"></div>
+  </div>
+
+  <main class="container">
+    <!-- hero -->
+    <section class="chapter wash wash-cream hero hero-kopitiam hero-split" id="start">
+      <div class="hero-fold">
+        <p class="kicker reveal-soft">market-linked protection, long-term behaviour product</p>
+        <h1 class="site-title reveal-soft">Investment-linked Policies 
+            </h1>
+        <h1 class="site-title reveal-soft">(ILPs)
+            </h1>
+      </div>
+
+      <div class="hero-below">
+        <p class="lead center reveal-soft">
+          Investment-Linked Policies bundle insurance protection with market investments.
+          Returns are not guaranteed, outcomes depend heavily on markets, charges, and behaviour.
+        </p>
+
+        <div class="boundary reveal-soft">
+          Educational only. Not advice. No endorsements. No insurer affiliations.
+        </div>
+
+        <p class="framing center reveal-soft">
+          A simple idea: ILPs trade certainty for market participation,
+          and trade simplicity for flexibility.
+        </p>
+
+        <div class="spacer-xl"></div>
+        <p class="small center reveal-soft muted">
+          Tip: use “Contents” (bottom-right) to jump around.
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- what is -->
+    <section class="chapter wash wash-blue" id="what-is">
+      <h2 class="center reveal-soft">What it is, in one minute</h2>
+
+      <p class="reveal-fast">
+        An Investment-Linked Policy (ILP) is a life insurance policy where part of your premium goes to insurance charges,
+        and part is used to buy investment units in funds you choose.
+      </p>
+
+      <div class="card reveal-fast">
+        <h3>Three moving parts</h3>
+        <ul>
+          <li><strong>Protection</strong>, what triggers payout (<span class="gloss" data-term="death">death</span>,
+          <span class="gloss" data-term="tpd">TPD</span>, and
+          <span class="gloss" data-term="ci">CI</span>, depending on the policy)</li>
+          <li><strong>Investments</strong>, units in funds that rise and fall with markets</li>
+          <li><strong>Charges</strong>, costs deducted along the way (not just once)</li>
+        </ul>
+        <p class="muted">
+          The investment risk sits with you, not the insurer.
+          When markets fall, your account value can fall too.
+        </p>
+      </div>
+
+      <div class="two-col reveal-fast">
+        <div class="card">
+          <h3>What ILPs are good at</h3>
+          <ul>
+            <li>bundling “invest + insure” into one ongoing habit</li>
+            <li>flexibility to adjust premiums, coverage, or funds (product-specific)</li>
+            <li>market exposure over long horizons, if you stay consistent</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Where ILPs bite</h3>
+          <ul>
+            <li>charges compound over time, not always obvious upfront</li>
+            <li>early exits can be painful (surrender penalties, low value)</li>
+            <li>behaviour matters, switching, stopping, panic decisions</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="note reveal-fast">
+        <p>
+          Same claim triggers exist across term, whole life, and ILPs.
+          The difference is what happens to the “savings / investing” side, and who bears the investment risk.
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- how it grows -->
+    <section class="chapter wash wash-green" id="market">
+      <h2 class="center reveal-soft">How ILPs grow, and don’t</h2>
+
+      <p class="reveal-fast">
+        People usually imagine an ILP as “premium in, value up”.
+        In reality, it’s closer to “premium in, charges out, units bought, markets move”.
+      </p>
+
+      <div class="two-col reveal-fast">
+        <div class="card">
+          <h3>Growth comes from markets</h3>
+          <ul>
+            <li>your account value depends on fund performance</li>
+            <li>returns are not promised, projections are not guarantees</li>
+            <li>bad sequences early can take longer to recover</li>
+          </ul>
+          <p class="muted">
+            “Good long-term market returns” is a real force,
+            but it does not rescue every structure or every behaviour.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Friction comes from charges</h3>
+          <ul>
+            <li>charges reduce how much actually gets invested</li>
+            <li>insurance costs often rise as you age</li>
+            <li>small percentages compound into real money over decades</li>
+          </ul>
+          <p class="muted">
+            In ILPs, returns have to overcome friction first.
+          </p>
+        </div>
+      </div>
+
+      <div class="boundary reveal-fast">
+        Markets drive the engine, charges are the drag, behaviour is the steering
+      </div>
+
+      <div class="note reveal-fast">
+        <p>
+          Practical mental model:
+          an ILP is not a “bad product” or “good product”.
+          it is a product where outcomes are sensitive to assumptions and actions.
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- charges -->
+    <section class="chapter wash wash-purple" id="mechanics">
+      <h2 class="center reveal-soft">Charges, the silent driver</h2>
+
+      <p class="reveal-fast">
+        If you ignore charges, ILPs can look simpler than they are.
+        Charges are not “evil”, they’re the cost of running the policy and providing protection,
+        but they meaningfully change long-run outcomes.
+      </p>
+
+      <div class="grid-2 reveal-fast">
+        <div class="card">
+          <h3>Common charge buckets</h3>
+          <ul>
+            <li><strong>insurance charges</strong>, cost of coverage, often rises with age</li>
+            <li><strong>policy / admin charges</strong>, the platform cost of the policy</li>
+            <li><strong>fund-level fees</strong>, ongoing management costs inside funds</li>
+            <li><strong>other structure items</strong>, varies by product (ask what applies)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Why this matters</h3>
+          <ul>
+            <li>charges reduce net growth over decades</li>
+            <li>“small %” compounds into large $ differences</li>
+            <li>early years can feel slow because costs are front-loaded or heavy</li>
+            <li>premium increases later may be needed to sustain coverage</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="note reveal-fast">
+        <p class="center">
+          A useful habit: ask for a clean summary of ongoing charges and what happens in the first 5 years vs 20 years.
+          Not just the projected returns page.
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Interactive A: charges drag -->
+    <section class="chapter wash wash-blue" id="calc">
+      <h2 class="center reveal-soft">Charges drag visualiser</h2>
+
+      <p class="reveal-fast">
+        This is not an insurer illustration.
+        It’s a toy model to show how small differences in charges can compound.
+        Use it for intuition, not decision-making.
+      </p>
+
+      <div class="card reveal-fast" id="dragCalc">
+        <h3>Charges drag (toy model)</h3>
+
+        <div class="two-col" style="gap:14px;">
+          <div>
+            <label for="dragYears"><strong>Time horizon</strong> <span class="muted" id="dragYearsLabel">25 years</span></label>
+            <input id="dragYears" type="range" min="5" max="35" value="25" step="1" style="width:100%;">
+
+            <div style="height:10px"></div>
+
+            <label for="dragMonthly"><strong>Monthly contribution</strong> <span class="muted" id="dragMonthlyLabel">$300</span></label>
+            <input id="dragMonthly" type="range" min="50" max="1500" value="300" step="50" style="width:100%;">
+
+            <div style="height:10px"></div>
+
+            <label for="dragGross"><strong>Gross return (before charges)</strong> <span class="muted" id="dragGrossLabel">6.0%</span></label>
+            <input id="dragGross" type="range" min="2" max="10" value="6" step="0.5" style="width:100%;">
+
+            <div style="height:10px"></div>
+
+            <label for="dragFee"><strong>Total annual charges (simplified)</strong> <span class="muted" id="dragFeeLabel">2.0%</span></label>
+            <input id="dragFee" type="range" min="0.5" max="4" value="2" step="0.1" style="width:100%;">
+          </div>
+
+          <div>
+            <div class="note" style="margin:0;">
+              <h3 style="margin-top:0;">What this shows</h3>
+              <p class="muted">
+                We assume you contribute monthly.
+                “Net return” = gross return minus charges (simplified).
+                Real ILPs can be more complex, this is the direction.
+              </p>
+
+              <div class="boundary" style="margin-top:14px; width:100%;">
+                <div style="display:grid; gap:10px;">
+                  <div style="display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;">
+                    <div>
+                      <div class="muted">Net return (toy)</div>
+                      <div style="font-family:'Fraunces', serif; font-weight:900; font-size:28px;">
+                        <span id="dragNetOut">4.0%</span>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="muted">Final value</div>
+                      <div style="font-family:'Fraunces', serif; font-weight:900; font-size:28px;">
+                        <span id="dragFinalOut">$0</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card" style="margin:0;">
+                    <div class="muted">Total contributed</div>
+                    <div style="font-family:'Fraunces', serif; font-weight:900; font-size:22px;">
+                      <span id="dragContribOut">$0</span>
+                    </div>
+
+                    <div style="height:8px"></div>
+
+                    <div class="muted">Charges drag (difference vs no charges)</div>
+                    <div style="font-family:'Fraunces', serif; font-weight:900; font-size:22px;">
+                      <span id="dragDragOut">$0</span>
+                    </div>
+
+                    <p class="muted" style="margin-top:10px;">
+                      “Charges drag” here is the gap between a world with 0% charges and your chosen charge level,
+                      holding gross return and contributions constant.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card" style="margin-top:14px;">
+              <h3>Notice</h3>
+              <ul>
+                <li>fees look small annually, but compound over decades</li>
+                <li>long horizons magnify both good markets and bad structure</li>
+                <li>behaviour risk (stopping early) matters even more than this calculator shows</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="note reveal-fast">
+        <p class="center">
+          This block is meant to explain the shape of compounding with friction,
+          not to estimate your policy’s future value.
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Interactive E: allocation toy -->
+    <section class="chapter wash wash-green" id="types">
+      <h2 class="center reveal-soft">Allocation + volatility toy</h2>
+
+      <p class="reveal-fast">
+        ILPs often ask you to choose funds or portfolios.
+        This toy doesn’t tell you what to buy,
+        it only shows how “more equity” usually means “more volatility”.
+      </p>
+
+      <div class="card reveal-fast" id="allocToy">
+        <h3>Allocation toy (for intuition)</h3>
+
+        <div class="two-col" style="gap:14px;">
+          <div>
+            <label for="eqPct"><strong>Equity allocation</strong> <span class="muted" id="eqPctLabel">70%</span></label>
+            <input id="eqPct" type="range" min="0" max="100" value="70" step="5" style="width:100%;">
+
+            <div style="height:10px"></div>
+
+            <label for="allocYears"><strong>Holding horizon</strong> <span class="muted" id="allocYearsLabel">20 years</span></label>
+            <input id="allocYears" type="range" min="5" max="35" value="20" step="1" style="width:100%;">
+
+            <div style="height:10px"></div>
+
+            <div class="note" style="margin:0;">
+              <p class="muted">
+                We’ll label volatility qualitatively, and show a “stress test” vibe,
+                not a forecast.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <div class="boundary" style="margin-top:0; width:100%;">
+              <div style="display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;">
+                <div>
+                  <div class="muted">Volatility label</div>
+                  <div style="font-family:'Fraunces', serif; font-weight:900; font-size:28px;">
+                    <span id="volLabelOut">medium</span>
+                  </div>
+                </div>
+                <div>
+                  <div class="muted">Downturn feel (toy)</div>
+                  <div style="font-family:'Fraunces', serif; font-weight:900; font-size:28px;">
+                    <span id="drawdownOut">-35%</span>
+                  </div>
+                </div>
+              </div>
+
+              <p class="muted" style="margin-top:10px;">
+                “Downturn feel” is a simplified stress number (not a promise).
+                It’s here to remind you that market-linked products can drop,
+                sometimes a lot, even if long-run averages are positive.
+              </p>
+            </div>
+
+            <div class="card" style="margin-top:14px;">
+              <h3>What to notice</h3>
+              <ul>
+                <li>higher equity, higher potential upside (and downside), higher emotional difficulty</li>
+                <li>longer horizons usually make volatility easier to live with, but not painless</li>
+                <li>the real risk is abandoning the plan after a drawdown</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="note reveal-fast">
+        <p class="center">
+          This section is deliberately qualitative.
+          If a product requires market exposure, you should be honest about what drawdowns feel like.
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Interactive D: what breaks if -->
+    <section class="chapter wash wash-cream" id="mistakes">
+      <h2 class="center reveal-soft">What breaks if…</h2>
+
+      <p class="reveal-fast">
+        These are not “gotchas”.
+        They are predictable consequences of how ILPs are structured and used.
+      </p>
+
+      <div class="card reveal-fast">
+        <h3>Common ILP pain points (accordion)</h3>
+
+        <div class="breaks">
+          <details class="break-item">
+            <summary>…markets fall early in the policy</summary>
+            <div class="break-body">
+              <p>
+                early losses can feel more painful because your account value is still small,
+                charges still apply, and recovery needs time.
+              </p>
+              <p class="muted">
+                key idea, sequence matters, bad early years can create a slow-feeling start even if long-run markets recover
+              </p>
+            </div>
+          </details>
+
+          <details class="break-item">
+            <summary>…i stop paying premiums for a while</summary>
+            <div class="break-body">
+              <p>
+                the policy may continue by deducting charges from your account value,
+                but if value becomes insufficient, the policy can <span class="gloss" data-term="lapse">lapse</span>, depending on terms.
+              </p>
+              <p class="muted">
+                key idea, the insurance charges don’t pause just because your cashflow paused
+              </p>
+            </div>
+          </details>
+
+          <details class="break-item">
+            <summary>…i surrender early because i’m disappointed</summary>
+            <div class="break-body">
+              <p>
+                early surrender can lock in losses and may trigger penalties or poor value relative to what you paid,
+                especially if the structure is front-loaded.
+              </p>
+              <p class="muted">
+                key idea, ILPs reward staying, early exits can feel harsh because the product assumes long holding periods
+              </p>
+            </div>
+          </details>
+
+          <details class="break-item">
+            <summary>…i keep switching funds based on recent performance</summary>
+            <div class="break-body">
+              <p>
+                frequent switching can turn long-term investing into short-term guessing.
+                Even without explicit switching fees, the behaviour risk is real.
+              </p>
+              <p class="muted">
+                key idea, a market-linked product is already volatile, adding timing decisions can amplify the volatility you personally experience
+              </p>
+            </div>
+          </details>
+
+          <details class="break-item">
+            <summary>…i read projected returns as guaranteed outcomes</summary>
+            <div class="break-body">
+              <p>
+                projections are not promises, they are scenarios.
+                what matters is the structure, the charges, and your ability to stay invested.
+              </p>
+              <p class="muted">
+                key idea, in ILPs, you should treat illustrations as “what could happen”, not “what will happen”
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="boundary reveal-fast">
+        ILPs are not just a product, they are a behaviour contract
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+<!-- strengths general -->
+<section class="chapter wash wash-green" id="compare">
+  <h2 class="center reveal-soft">Strengths and weaknesses</h2>
+
+  <p class="reveal-fast">
+    Investment-linked policies combine protection with market participation.
+    Their outcomes depend not just on markets,
+    but on structure, charges, and how consistently the policy is held.
+    ILPs are powerful when behaviour aligns, and unforgiving when it doesn’t.
+  </p>
+
+  <div class="two-col reveal-fast">
+    <div class="card">
+      <h3>Strengths</h3>
+      <ul>
+        <li>potential for market-linked growth over long horizons</li>
+        <li>flexibility to adjust funds, premiums, or coverage (product-dependent)</li>
+        <li>bundles investing and insurance into one ongoing habit</li>
+        <li>transparent link between markets and account value</li>
+      </ul>
+      <p class="muted">
+        ILPs feel “useful” when they help someone stay invested consistently,
+        rather than trying to optimise returns.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Weaknesses</h3>
+      <ul>
+        <li>investment value is not guaranteed</li>
+        <li>charges compound and materially affect long-term outcomes</li>
+        <li>high behaviour risk, stopping or switching early hurts</li>
+        <li>early exit is often inefficient by design</li>
+      </ul>
+      <p class="muted">
+        ILPs feel “painful” when treated like a flexible savings account.
+        They assume time, consistency, and discipline.
+      </p>
+    </div>
+  </div>
+
+  <div class="grid-3 reveal-fast">
+    <div class="card">
+      <h3>Compared to <a href="term.html">term</a></h3>
+      <ul>
+        <li>adds investing but also adds complexity and charges</li>
+        <li>term is usually cheaper for pure protection</li>
+        <li>ILPs work best when held consistently</li>
+      </ul>
+      <p class="muted">
+        ILPs trade simplicity for bundling and growth potential.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Compared to <a href="whole.html">whole life</a></h3>
+      <ul>
+        <li>no guaranteed floor, values move with markets</li>
+        <li>greater flexibility and upside potential</li>
+        <li>less certainty in outcomes</li>
+      </ul>
+      <p class="muted">
+        ILPs trade guarantees for participation.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Quick anchor</h3>
+      <ul>
+        <li>term solves a window</li>
+        <li>whole life solves permanence</li>
+        <li>ILPs solve growth and flexibility</li>
+      </ul>
+      <p class="muted">
+        Product choice is also behaviour choice.
+      </p>
+    </div>
+  </div>
+
+  <div class="boundary reveal-fast">
+    ILPs amplify both discipline and mistakes
+  </div>
+</section>
+
+    <div class="divider"></div>
+
+    <!-- recommendation: separate -->
+    <section class="chapter wash wash-blue" id="recommendation">
+      <h2 class="center reveal-soft">A common recommendation: separate protection and investing</h2>
+
+      <p class="reveal-fast">
+        A neutral way to think about it:
+        ILPs combine two jobs, protection and investing.
+        Many people prefer separating these jobs so each can be evaluated clearly.
+      </p>
+
+      <div class="two-col reveal-fast">
+        <div class="card">
+          <h3>One common approach</h3>
+          <ul>
+            <li>buy <strong>term insurance</strong> for protection</li>
+            <li>invest separately through a broker or cash management platform</li>
+          </ul>
+          <p class="muted">
+            If you’re not lazy (meaning you can invest consistently without needing a product to force you),
+            this separation often gives cleaner transparency and easier flexibility.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Why people do this</h3>
+          <ul>
+            <li>clear cost visibility, insurance cost stays insurance cost</li>
+            <li>more control over asset allocation and switching</li>
+            <li>easier exit, no need to “unwind a bundle”</li>
+            <li>less temptation to treat insurance as investment performance</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="note reveal-fast">
+        <p>
+          This is not saying ILPs are always wrong.
+          ILPs can help people who <strong>value automation, forced consistency, or who know they won’t invest otherwise</strong>.
+          The question is what you need the product to do for your behaviour.
+        </p>
+      </div>
+
+      <div class="boundary reveal-fast">
+        If you can invest consistently on your own, you usually don’t need to pay a structure to do it for you
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- before buy -->
+    <section class="chapter wash wash-cream" id="before-buy">
+      <h2 class="center reveal-soft">Before you buy</h2>
+
+      <p class="reveal-fast">
+        ILPs are not “complicated” because of vocabulary.
+        They are complicated because outcomes depend on assumptions, charges, and actions over time.
+        The goal is to understand the structure before you commit to it.
+      </p>
+
+      <div class="two-col reveal-fast">
+        <div class="card">
+          <h3>Fit questions</h3>
+          <ul>
+            <li>am i buying this for protection, investing, or behaviour forcing</li>
+            <li>if markets fall 30%, will i stay consistent</li>
+            <li>am i likely to stop paying or surrender early</li>
+            <li>do i prefer transparency and separate accounts, or a bundled structure</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Mechanics questions</h3>
+          <ul>
+            <li>what are all ongoing charges, and how do they change over time</li>
+            <li>how does insurance cost change as i age</li>
+            <li>what happens if i stop paying for 3–6 months</li>
+            <li>what are surrender terms in the first 5–10 years</li>
+            <li>what funds are available, and what are their fund-level fees</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="note reveal-fast">
+        <p class="center">
+          Small habit that helps: ask for an explanation of “what happens in year 3, year 8, year 20”,
+          not just the best-looking projection page.
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- resources -->
+    <section class="chapter wash wash-purple" id="resources">
+      <h2 class="center reveal-soft">External references</h2>
+
+      <p class="reveal-fast">
+        This page focuses on structure and trade-offs, not rankings.
+        If you want external portals to compare products and definitions, these can be useful.
+      </p>
+
+      <div class="resource-list reveal-fast">
+        <div class="resource">
+          <h3>CompareFirst, product comparison portal</h3>
+          <p class="muted">
+            A standardised comparison portal for product features and benefits across insurers.
+          </p>
+          <a class="ext" href="https://www.comparefirst.sg/wap/homeEvent.action" target="_blank" rel="noopener noreferrer">
+            Open external site ↗
+          </a>
+        </div>
+
+        <div class="resource">
+          <h3>Seedly, ILP reviews and user perspectives</h3>
+          <p class="muted">
+            A consumer-style page that compiles ILP discussions and reviews, useful for seeing the real questions people run into.
+          </p>
+          <a class="ext" href="https://seedly.sg/reviews/investment-linked-policy/" target="_blank" rel="noopener noreferrer">
+            Open external site ↗
+          </a>
+        </div>
+      </div>
+
+      <div class="note reveal-fast">
+        <p>
+          Quick tip: use portals to check factual features and definitions,
+          then use write-ups to see how people talk about trade-offs,
+          do not treat any single page as the whole truth.
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- glossary -->
+    <section class="chapter wash wash-cream" id="glossary">
+      <h2 class="center reveal-soft">Glossary (ILP words)</h2>
+
+      <p class="reveal-fast">
+        This page avoids repeating the whole life / term glossary.
+        Here are the ILP-specific words that keep showing up.
+      </p>
+
+      <div class="glossary-grid reveal-fast">
+        <div class="glossary-item">
+          <h3>Account value</h3>
+          <p>The value of your investment units after market movements and charges (simplified).</p>
+        </div>
+
+        <div class="glossary-item">
+          <h3>Units</h3>
+          <p>The “shares” of the fund you hold inside the policy, their price moves with markets.</p>
+        </div>
+
+        <div class="glossary-item">
+          <h3>Fund fees</h3>
+          <p>Ongoing costs inside the fund itself, separate from policy-level charges.</p>
+        </div>
+
+        <div class="glossary-item">
+          <h3>Insurance charges</h3>
+          <p>The cost of the protection component, often increases with age.</p>
+        </div>
+
+        <div class="glossary-item">
+          <h3>Surrender</h3>
+          <p>Ending the policy early, the amount you receive depends on value and terms (often painful early).</p>
+        </div>
+
+        <div class="glossary-item">
+          <h3>Illustration</h3>
+          <p>A scenario projection, not a guaranteed outcome, use it to understand sensitivity.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- enough -->
+    <section class="chapter wash wash-blue" id="enough">
+      <h2 class="center reveal-soft">What “enough” looks like</h2>
+
+      <p class="reveal-fast">
+        For ILPs, “enough” is usually not the highest projected return.
+        It is understanding the structure, accepting volatility, and not abandoning the plan during stress.
+      </p>
+
+      <div class="note reveal-fast">
+        <p class="center">
+          ILPs can work, but only if you stay invested through downturns, understand the charges, and don’t treat projected returns as promises.
+        </p>
+      </div>
+
+      <div class="link-row reveal-fast">
+        <a class="button-link" href="term.html">Back to Term</a>
+        <a class="button-link" href="whole.html">Back to Whole Life</a>
+        <a class="button-link" href="isp.html">Back to ISPs</a>
+      </div>
+
+      <div class="footer reveal-fast">
+        <p class="center muted small">Educational only. Not advice. No endorsements. No insurer affiliations.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- tooltip -->
+  <div class="tooltip" id="tooltip" role="tooltip" aria-hidden="true"></div>
+
+  <!-- js last -->
+  <script src="app.js"></script>
+
+  <!-- page-only script: ILP interactives -->
+  <script>
+    (function () {
+      // ---------- helpers ----------
+      const $ = (id) => document.getElementById(id);
+
+      function formatSGD(n) {
+        return new Intl.NumberFormat("en-SG", {
+          style: "currency",
+          currency: "SGD",
+          maximumFractionDigits: 0
+        }).format(n);
+      }
+
+      // future value of monthly contributions with monthly compounding (toy)
+      function fvMonthly(pmt, years, annualRate) {
+        const r = annualRate / 12;
+        const n = years * 12;
+        if (Math.abs(r) < 1e-10) return pmt * n;
+        return pmt * ((Math.pow(1 + r, n) - 1) / r);
+      }
+
+      // ---------- A) charges drag visualiser ----------
+      (function () {
+        const years = $("dragYears");
+        const monthly = $("dragMonthly");
+        const gross = $("dragGross");
+        const fee = $("dragFee");
+
+        const yearsL = $("dragYearsLabel");
+        const monthlyL = $("dragMonthlyLabel");
+        const grossL = $("dragGrossLabel");
+        const feeL = $("dragFeeLabel");
+
+        const netOut = $("dragNetOut");
+        const finalOut = $("dragFinalOut");
+        const contribOut = $("dragContribOut");
+        const dragOut = $("dragDragOut");
+
+        if (!years || !monthly || !gross || !fee) return;
+
+        function computeDrag() {
+          const Y = Number(years.value);
+          const P = Number(monthly.value);
+          const g = Number(gross.value) / 100;
+          const f = Number(fee.value) / 100;
+
+          yearsL.textContent = Y + " years";
+          monthlyL.textContent = formatSGD(P);
+          grossL.textContent = g.toFixed(1) + "%";
+          feeL.textContent = (f * 100).toFixed(1) + "%";
+
+          // toy net return
+          const net = Math.max(-0.02, g - f); // clamp so it doesn't explode negatively
+          netOut.textContent = (net * 100).toFixed(1) + "%";
+
+          const fvNet = fvMonthly(P, Y, net);
+          const fvZeroFee = fvMonthly(P, Y, g);
+
+          const contributed = P * 12 * Y;
+          const drag = Math.max(0, fvZeroFee - fvNet);
+
+          finalOut.textContent = formatSGD(Math.round(fvNet));
+          contribOut.textContent = formatSGD(Math.round(contributed));
+          dragOut.textContent = formatSGD(Math.round(drag));
+        }
+
+        ["input", "change"].forEach(evt => {
+          years.addEventListener(evt, computeDrag);
+          monthly.addEventListener(evt, computeDrag);
+          gross.addEventListener(evt, computeDrag);
+          fee.addEventListener(evt, computeDrag);
+        });
+
+        computeDrag();
+      })();
+
+      // ---------- E) allocation + volatility toy ----------
+      (function () {
+        const eq = $("eqPct");
+        const yrs = $("allocYears");
+        const eqL = $("eqPctLabel");
+        const yrsL = $("allocYearsLabel");
+        const volOut = $("volLabelOut");
+        const ddOut = $("drawdownOut");
+
+        if (!eq || !yrs) return;
+
+        function labelVol(eqPct) {
+          if (eqPct <= 20) return "low";
+          if (eqPct <= 60) return "medium";
+          if (eqPct <= 85) return "high";
+          return "very high";
+        }
+
+        // toy “downturn feel” (stress number), NOT a forecast
+        function toyDrawdown(eqPct, years) {
+          // base drawdown grows with equity, slightly softened by longer horizon (still painful)
+          const base = 0.10 + (eqPct / 100) * 0.45; // 10% to 55%
+          const soften = Math.min(0.18, Math.max(0, (years - 10) * 0.006)); // up to 18% soften
+          const dd = Math.max(0.08, base - soften);
+          return dd;
+        }
+
+        function computeAlloc() {
+          const e = Number(eq.value);
+          const y = Number(yrs.value);
+
+          eqL.textContent = e + "%";
+          yrsL.textContent = y + " years";
+
+          volOut.textContent = labelVol(e);
+
+          const dd = toyDrawdown(e, y);
+          ddOut.textContent = "-" + Math.round(dd * 100) + "%";
+        }
+
+        ["input", "change"].forEach(evt => {
+          eq.addEventListener(evt, computeAlloc);
+          yrs.addEventListener(evt, computeAlloc);
+        });
+
+        computeAlloc();
+      })();
+    })();
+  </script>
+</body>
+</html>

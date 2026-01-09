@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MediShield Life | Policy Kopitiam</title>
+  <meta name="description" content="A calm, neutral explainer on MediShield Life, why it exists, what it covers, and how the cost-sharing actually works." />
+
+  <!-- fonts stay global so the whole site feels like one thing -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,650;9..144,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <img src="images/favicon.png" alt="" class="brand-mark" aria-hidden="true">
+        <span class="brand-name">Policy Kopitiam</span>
+      </div>
+
+      <nav class="topbar-links" aria-label="Primary">
+  <a href="index.html">Home</a>
+
+  <div class="nav-dropdown">
+    <button class="nav-dropbtn" id="productsBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="productsMenu">
+      Products
+    </button>
+
+    <div class="nav-dropdown-panel" role="menu">
+      <a role="menuitem" href="medishield.html">MediShield Life</a>
+      <a role="menuitem" href="isp.html">ISPs</a>
+      <a role="menuitem" href="term.html">Term</a>
+      <a role="menuitem" href="whole.html">Whole Life</a>
+      <a role="menuitem" href="ilp.html">ILP</a>
+    </div>
+  </div>
+
+  <a href="about.html">About</a>
+  <a href="disclaimer.html">Disclaimer</a>
+    </nav>
+    </div>
+  </header>
+
+  <!-- floating controls -->
+  <button class="fab" id="tocBtn" aria-haspopup="dialog" aria-controls="tocOverlay">Contents</button>
+  <a class="backtotop" id="backToTop" href="#start" aria-label="Back to top">↑ Top</a>
+
+  <!-- toc overlay -->
+  <div class="overlay" id="tocOverlay" aria-hidden="true">
+    <div class="overlay-panel" role="dialog" aria-modal="true" aria-label="Table of contents">
+      <div class="overlay-header">
+        <div class="overlay-title">Contents</div>
+        <button class="overlay-close" id="tocCloseBtn" aria-label="Close contents">✕</button>
+      </div>
+
+      <div class="overlay-body">
+        <a class="toc-link" data-target="start" href="#start">1) MediShield Life</a>
+        <a class="toc-link" data-target="one-minute" href="#one-minute">2) What it is (one minute)</a>
+        <a class="toc-link" data-target="why-exists" href="#why-exists">3) Why it exists</a>
+        <a class="toc-link" data-target="baseline" href="#baseline">4) The baseline it is built on</a>
+        <a class="toc-link" data-target="covers" href="#covers">5) What it covers, what it doesn’t</a>
+        <a class="toc-link" data-target="cost-sharing" href="#cost-sharing">6) Deductibles and co-insurance</a>
+        <a class="toc-link" data-target="lifelong" href="#lifelong">7) Why coverage is lifelong</a>
+        <a class="toc-link" data-target="flow" href="#flow">8) Premiums and claims flow</a>
+        <a class="toc-link" data-target="check" href="#check">9) How to check your MediShield</a>
+        <a class="toc-link" data-target="glossary" href="#glossary">10) Glossary</a>
+        <a class="toc-link" data-target="official" href="#official">11) Official references</a>
+        <a class="toc-link" data-target="next" href="#next">12) What to read next</a>
+      </div>
+    </div>
+  </div>
+
+    <!-- global decor layer (hidden on hero, appears after you scroll past hero) -->
+  <div class="decor-layer" aria-hidden="true">
+    <div class="kopi-decor decor-eggs"></div>
+    <div class="kopi-decor decor-toast"></div>
+    <div class="kopi-decor decor-milk"></div>
+    <div class="kopi-decor decor-coffee"></div>
+  </div>
+
+  <main class="container">
+    <!-- hero -->
+    <section class="chapter wash wash-cream hero hero-kopitiam hero-split" id="start">
+      <!-- above the fold -->
+      <div class="hero-fold">
+        <p class="kicker reveal-soft">the baseline layer</p>
+        <h1 class="site-title reveal-soft">MediShield Life</h1>
+      </div>
+
+      <!-- below the fold -->
+      <div class="hero-below">
+        <p class="lead center reveal-soft">
+          A neutral explainer of Singapore’s national health insurance, written to help you understand the mechanics before you buy anything else.
+        </p>
+
+        <div class="boundary reveal-soft">
+          Educational only. Not advice. No endorsements. No insurer affiliations.
+        </div>
+
+        <p class="framing center reveal-soft">
+          A simple idea: MediShield Life is designed to stop a medical bill from wrecking your life plans,
+          not to make healthcare feel luxurious.
+        </p>
+
+        <div class="spacer-xl"></div>
+        <p class="small center reveal-soft muted">
+          Tip: use “Contents” (bottom-right) to jump around.
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- one minute -->
+    <section class="chapter wash wash-blue" id="one-minute">
+      <h2 class="center reveal-soft">What it is, in one minute</h2>
+
+      <p class="reveal-fast">
+        MediShield Life is Singapore’s basic national health insurance.
+        It helps pay for <strong>large hospital bills</strong> and <strong>selected costly outpatient treatments</strong>, so you use less MediSave or cash.
+        The key word is large, it is not meant to cover everything, and it is not meant to make healthcare feel free.
+      </p>
+
+      <div class="card reveal-fast">
+        <h3>Who is covered?</h3>
+        <p>
+       All Singapore Citizens and Permanent Residents are automatically covered,
+      and coverage continues regardless of age or health conditions.
+       </p>
+    </div>
+
+      <div class="card reveal-fast">
+        <h3>Floor, not ceiling</h3>
+        <p>
+          If you understand MediShield Life first, everything else becomes easier.
+          Integrated Shield Plans and riders are best understood as optional layers that modify gaps or comfort,
+          they are not “replacements” for the base layer.
+        </p>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- why exists -->
+    <section class="chapter wash wash-green" id="why-exists">
+      <h2 class="center reveal-soft">Why MediShield Life exists</h2>
+
+      <p class="reveal-fast">
+        Serious illness is both a health shock and a financial shock.
+        Bills can be large, sudden, and poorly timed, especially if the illness reduces your ability to work.
+        MediShield Life exists to reduce the chance that one medical episode becomes long-term financial damage.
+      </p>
+
+      <div class="two-col reveal-fast">
+        <div class="card">
+          <h3>The problem it solves</h3>
+          <p class="muted">
+            A rare event for an individual can still be common across a population.
+            If costs are concentrated on the unlucky few, the outcome can be catastrophic.
+          </p>
+          <p>
+            MediShield Life spreads that risk so that the cost of bad luck is shared across many people over time.
+            This is the logic of social insurance.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>What it is not trying to do</h3>
+          <p class="muted">
+            It is not trying to eliminate every out-of-pocket dollar.
+            It is not trying to subsidise comfort preferences for everyone.
+          </p>
+          <p>
+            If it tried to cover everything, premiums would rise sharply for everyone,
+            including those who can least afford it.
+          </p>
+        </div>
+      </div>
+
+      <div class="note reveal-fast">
+        <p>
+          A national scheme usually draws a line between medical necessity and personal preference.
+          MediShield Life sits on the necessity side of that line.
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- baseline -->
+    <section class="chapter wash wash-purple" id="baseline">
+      <h2 class="center reveal-soft">
+        <span class="muted">The baseline is built on<br>
+        </span>subsidised care in public hospitals</span>
+      </h2>
+
+      <p class="reveal-fast">
+        MediShield Life benefits are sized around subsidised treatment in public hospitals.
+        This is why ward classes like B2 or C keep showing up in discussions,
+        they are used as the benchmark when sizing payouts.
+      </p>
+
+      <div class="grid-2 reveal-fast">
+        <div class="card">
+          <h3>If you choose higher comfort</h3>
+          <p>
+            You are still covered, but MediShield Life usually covers a smaller share of the total bill.
+            The remainder is paid using MediSave and cash.
+          </p>
+          <p class="muted">
+            This is the practical origin of “gaps”, not because MediShield is broken, but because the bill structure changed.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>This is intentional</h3>
+          <p>
+            Comfort is treated as a personal preference.
+            The national scheme is designed to make necessary care financially survivable,
+            not to guarantee private-room comfort by default.
+          </p>
+        </div>
+      </div>
+
+      <div class="boundary reveal-fast">
+        A useful anchor: “subsidised first, everything else is optional layers”.
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- covers -->
+    <section class="chapter wash wash-cream" id="covers">
+      <h2 class="center reveal-soft">What it covers, and what it does not</h2>
+
+      <p class="reveal-fast">
+        A lot of confusion disappears once you accept this,
+        MediShield Life is designed to cover medical necessity,
+        not daily healthcare, and not lifestyle preferences.
+      </p>
+
+      <div class="two-col reveal-fast">
+        <div class="card">
+          <h3>Designed to cover</h3>
+          <p class="muted">big, necessary medical expenses</p>
+          <ul>
+            <li>large hospital bills, inpatient stays</li>
+            <li>day surgery</li>
+            <li>selected costly outpatient treatments (the kind that can run for months)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Not designed to cover</h3>
+          <p class="muted">things that would make the scheme unaffordable if fully socialised</p>
+          <ul>
+            <li>routine GP visits and common medications</li>
+            <li>elective or cosmetic procedures</li>
+            <li>comfort upgrades as a default</li>
+            <li>every dollar of private hospital treatment</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="note reveal-fast">
+        <p>
+          If something feels excluded, ask whether it is a medical necessity problem or a comfort choice problem.
+          MediShield Life focuses on necessity, anything beyond that is usually handled by optional layers.
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- cost sharing -->
+    <section class="chapter wash wash-pink" id="cost-sharing">
+      <h2 class="center reveal-soft">Claim limits, deductibles and co-insurance</h2>
+
+      <p class="reveal-fast">
+        MediShield Life uses cost-sharing.
+        That means you usually pay part of the bill even when insured.
+        This is not a flaw, it is how the scheme keeps premiums sustainable and usage sensible.
+      </p>
+
+      <div class="card reveal-fast">
+          <h3>Maximum claim limits</h3>
+          <p>
+            MediShield Life has claim limits by service type and stay length, and an overall cap, the maximum claim limit per policy year is $200,000, and there is no lifetime limit.
+          </p>
+        </div>
+
+      <div class="grid-2 reveal-fast">
+        <div class="card">
+          <h3>Deductible</h3>
+          <p>
+            The <span class="gloss" data-term="deductible">deductible</span> is the amount you pay first in a policy year
+            before MediShield Life starts paying.
+          </p>
+          <p class="muted">
+            Think of it as a threshold that filters out smaller bills, and focuses insurance on large, disruptive ones.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Co-insurance</h3>
+          <p>
+            After the deductible, you still pay a percentage of the remaining claimable amount.
+            This is the co-insurance portion.
+          </p>
+          <p class="muted">
+            The point is not to punish patients, it is to avoid the system behaving like “free consumption”,
+            which tends to push costs up for everyone.
+          </p>
+        </div>
+      </div>
+
+      <div class="note reveal-fast">
+        <p>
+          A practical way to think about it:
+          MediShield Life is meant to protect you from the tail risk, the huge bills,
+          not to remove every bit of discomfort from the process.
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- lifelong -->
+    <section class="chapter wash wash-green" id="lifelong">
+      <h2 class="center reveal-soft">Why coverage is lifelong</h2>
+
+      <p class="reveal-fast">
+        Health risks rise with age, and so do medical costs.
+        If coverage ended at older ages, insurance would disappear exactly when people need it most.
+        MediShield Life solves this by being lifelong, it continues regardless of age or health status.
+      </p>
+
+      <div class="two-col reveal-fast">
+        <div class="card">
+          <h3>Universal means no cherry picking</h3>
+          <p>
+            Everyone is in, including those with pre-existing conditions.
+            That is part of the social contract behind a national scheme.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Lifelong does not mean free</h3>
+          <p>
+            Premiums reflect risk, and risk rises with age.
+            The point is not to make costs disappear,
+            it is to keep coverage available for life.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- flow -->
+    <section class="chapter wash wash-blue" id="flow">
+      <h2 class="center reveal-soft">How premiums and claims usually flow</h2>
+
+      <p class="reveal-fast">
+        You don’t need to memorise every administrative step,
+        but it helps to understand the overall flow, because it clarifies where “out of pocket” comes from.
+      </p>
+
+      <div class="two-col reveal-fast">
+        <div class="card">
+          <h3>Premiums</h3>
+          <p>
+            Premiums are typically deducted automatically from MediSave.
+            If MediSave is insufficient, you can top up, and family members can help pay using their MediSave.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Claims</h3>
+          <p>
+            In most cases the hospital submits the claim for you.
+            If you also have an Integrated Shield Plan, your insurer usually coordinates the total payment,
+            including the MediShield Life portion.
+          </p>
+          <p class="muted">
+            The remainder is settled via MediSave and or cash.
+          </p>
+        </div>
+      </div>
+
+      <div class="note reveal-fast">
+        <p>
+          What matters is knowing which layer pays what, and why the gap exists,
+          not becoming an expert in paperwork.
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- check -->
+    <section class="chapter wash wash-cream" id="check">
+      <h2 class="center reveal-soft">How to check your MediShield Life</h2>
+
+      <p class="reveal-fast">
+        If you want to sanity check what you have, start with official portals linked to Singpass and CPF services.
+        You should be able to view your coverage status, premium information, and claim records.
+      </p>
+
+      <div class="card reveal-fast">
+        <h3>What to look for</h3>
+        <ul>
+          <li>coverage status, active or not</li>
+          <li>premium amount and payment method</li>
+          <li>claim history entries</li>
+          <li>whether an Integrated Shield Plan is linked on top</li>
+        </ul>
+      </div>
+
+      <div class="note reveal-fast">
+        <p class="center">
+          Small tip: always anchor on MediShield Life first, it prevents you from paying twice for the same baseline layer
+        </p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ISPs -->
+<section class="chapter wash wash-green" id="isp-bridge">
+  <h2 class="center reveal-soft">Integrated Shield Plans (ISPs)</h2>
+
+  <p class="reveal-fast">
+    Integrated Shield Plans are optional private insurance plans that sit on top of MediShield Life.
+    They do not replace MediShield Life, instead, they build on it.
+  </p>
+
+  <div class="card reveal-fast">
+    <p>
+      MediShield Life provides a baseline level of protection, focused on subsidised care and large bills.
+      An Integrated Shield Plan typically increases coverage limits and reduces gaps,
+      especially when you choose higher ward classes or private hospitals.
+    </p>
+  </div>
+
+  <div class="two-col reveal-fast">
+    <div class="note">
+      <h3>What ISPs change</h3>
+      <ul>
+        <li>higher claim limits</li>
+        <li>less pro-ration for private or non-subsidised care</li>
+        <li>more predictable out-of-pocket costs (with riders)</li>
+      </ul>
+    </div>
+
+    <div class="note">
+      <h3>What ISPs do not change</h3>
+      <ul>
+        <li>MediShield Life still forms the base layer</li>
+        <li>deductibles and co-insurance still exist</li>
+        <li>cost-sharing does not disappear by default</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="reveal-fast">
+    Whether an Integrated Shield Plan makes sense depends on your preferences for hospital choice,
+    cost certainty, and long-term premiums, rather than on medical necessity alone.
+  </p>
+
+  <div class="link-row reveal-fast">
+    <a class="button-link" href="isp.html">
+      Want the long version? Read the Integrated Shield Plans page
+    </a>
+  </div>
+
+  <div class="footer reveal-fast">
+    <p class="center muted small">
+      Integrated Shield Plans are optional and privately provided. Coverage, premiums, and terms vary by insurer.
+    </p>
+  </div>
+  </section>
+
+<div class="divider"></div>
+
+    <!-- glossary -->
+    <section class="chapter wash wash-purple" id="glossary">
+      <h2 class="center reveal-soft">Glossary</h2>
+
+      <p class="reveal-fast">
+        You will see some terms underlined on this page.
+        Hover on desktop or tap on mobile for a quick definition.
+      </p>
+
+      <div class="glossary-grid reveal-fast">
+        <div class="glossary-item">
+          <h3>MediShield Life</h3>
+          <p>Singapore’s basic national health insurance for large hospital bills and selected costly outpatient treatments.</p>
+        </div>
+
+        <div class="glossary-item">
+          <h3>Deductible</h3>
+          <p>The fixed amount you pay first before insurance starts paying.</p>
+        </div>
+
+        <div class="glossary-item">
+          <h3>Co-insurance</h3>
+          <p>The percentage you pay after deductible, the insurer pays the rest (simplified).</p>
+        </div>
+
+        <div class="glossary-item">
+          <h3>Claim limit</h3>
+          <p>A cap on how much can be claimed for specific services, meant to keep the scheme sustainable.</p>
+        </div>
+
+        <div class="glossary-item">
+          <h3>Subsidised ward benchmark</h3>
+          <p>The reference point used when sizing MediShield Life benefits, often discussed as B2 or C in public hospitals.</p>
+        </div>
+
+        <div class="glossary-item">
+          <h3>Integrated Shield Plan</h3>
+          <p>Optional private insurance that sits on top of MediShield Life to reduce gaps, usually for higher ward classes or private hospitals.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- official -->
+    <section class="chapter wash wash-green" id="official">
+      <h2 class="center reveal-soft">For the official, always-updated details</h2>
+
+      <p class="reveal-fast">
+        This page focuses on concepts, what MediShield Life is trying to do, where gaps come from, and how to think about it.
+        For benefit tables, exclusions, and the latest claim procedures, use the official MOH references below.
+      </p>
+
+      <div class="card reveal-fast">
+        <h3>MOH references</h3>
+        <p class="muted">authoritative sources for the latest details</p>
+        <ul>
+          <li><a href="https://www.moh.gov.sg/managing-expenses/schemes-and-subsidies/medishield-life/medishield-life/" target="_blank" rel="noopener noreferrer">MOH, MediShield Life overview</a></li>
+          <li><a href="https://www.moh.gov.sg/managing-expenses/schemes-and-subsidies/medishield-life/medishield-life-benefits/" target="_blank" rel="noopener noreferrer">MOH, benefits and exclusions</a></li>
+          <li><a href="https://www.moh.gov.sg/managing-expenses/schemes-and-subsidies/medishield-life/how-to-make-a-medishield-life-claim/" target="_blank" rel="noopener noreferrer">MOH, how claims are made</a></li>
+          <li><a href="https://www.cpf.gov.sg/service/article/i-intend-to-visit-a-clinic-hospital-how-do-i-know-if-i-can-use-medishield-life-coverage-in-that-clinic-hospital" rel="noopener noreferrer">CPF, which institutions are eligible for Medishield Life coverage?</a></li>
+        </ul>
+      </div>
+
+      <div class="boundary reveal-fast">
+        If you only remember one thing, understand MediShield Life first, then decide if you want to buy comfort or reduce uncertainty on top
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- next -->
+    <section class="chapter wash wash-cream" id="next">
+      <h2 class="center reveal-soft">What to read next</h2>
+
+      <p class="reveal-fast">
+        People often compare private plans without anchoring on what MediShield Life already does.
+        The next logical page is Integrated Shield Plans, what they add, what they do not fix, and what trade-offs they introduce.
+      </p>
+
+      <div class="link-row reveal-fast">
+        <a class="button-link" href="index.html#sg-system">Back to Singapore system</a>
+        <!-- change if changed -->
+        <a class="button-link" href="isp.html">Next, ISPs</a>
+      </div>
+
+      <div class="note reveal-fast">
+        <p class="center">
+          MediShield Life isn’t about comfort, it’s about making large medical bills survivable.
+        </p>
+      </div>
+
+      <div class="footer reveal-fast">
+        <p class="center muted small">Educational only. Not advice. No endorsements. No insurer affiliations.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- tooltip -->
+  <div class="tooltip" id="tooltip" role="tooltip" aria-hidden="true"></div>
+
+  <!-- js last -->
+  <script src="app.js"></script>
+</body>
+</html>
